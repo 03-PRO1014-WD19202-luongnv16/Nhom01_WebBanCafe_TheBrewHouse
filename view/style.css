@@ -10,6 +10,8 @@ body{
     width: 85%;
 }
 
+                                                       /* TRANG SẢN PHẨM */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -105,4 +107,53 @@ h2{
     justify-content: center; 
     align-items: center; 
     border-radius: 20px;
+}
+
+
+/* TRANG CHI TIẾT SẢN PHẨM */
+.main_container{
+    display: flex;
+    margin-top: 70px;
+}
+
+.giasp{
+    color: orange;
+}
+
+.anhchitietsp{
+    height: 550px;
+}
+
+select{
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+input{
+    margin-left: 100px;
+    margin-top: 40px;
+    width: 350px;
+    height: 50px;
+    background-color: orange
+}
+
+
+.custom-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    appearance: none; 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23757575"><path d="M7 10l5 5 5-5z"/></svg>'); /* Mũi tên xuống */
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+.custom-select:hover {
+    border-color: #666;
 }
