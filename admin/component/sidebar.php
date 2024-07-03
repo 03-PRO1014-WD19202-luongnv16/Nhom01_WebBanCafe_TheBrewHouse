@@ -15,7 +15,7 @@
                     <li>
                       <a href="index.php" class="has-arrow">
                         <div class="parent-icon">
-                          <i class="bi bi-house"></i>
+                          <i class="bi bi-house-door"></i>
                         </div>
                         <div class="menu-title">Trang chủ</div>
                       </a>
@@ -24,7 +24,15 @@
                     <li>
                       <a href="index.php?act=adddm" class="has-arrow">
                         <div class="child-icon">
-                          <i class="bi bi-caret-right"></i>
+                          <i class="bi bi-people"></i>
+                        </div>
+                        <div class="menu-title">Khách hàng</div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="index.php?act=adddm" class="has-arrow">
+                        <div class="child-icon">
+                          <i class="bi bi-grid-3x3-gap"></i>
                         </div>
                         <div class="menu-title">Danh mục</div>
                       </a>
@@ -32,7 +40,7 @@
                     <li>
                       <a href="index.php?act=addsp" class="has-arrow">
                         <div class="child-icon">
-                          <i class="bi bi-caret-right"></i>
+                        <i class="bi bi-tag"></i>
                         </div>
                         <div class="menu-title">Sản phẩm</div>
                       </a>
@@ -40,40 +48,32 @@
                     <li>
                       <a href="index.php?act=listgiohang" class="has-arrow">
                         <div class="child-icon">
-                          <i class="bi bi-caret-right"></i>
+                        <i class="bi bi-cart3"></i>
                         </div>
-                        <div class="menu-title">Giỏ hàng</div>
+                        <div class="menu-title">Đơn hàng</div>
                       </a>
                     </li>
                     <li class="menu-label">PAGES</li>
                     <li>
                       <a href="#" class="has-arrow">
                         <div class="child-icon">
-                          <i class="bi bi-caret-right"></i>
+                          <i class="bi bi-telephone"></i>
                         </div>
-                        <div class="menu-title">User Profile</div>
+                        <div class="menu-title">Liên hệ</div>
                       </a>
                     </li>
                     <li>
                       <a href="#" class="has-arrow">
                         <div class="child-icon">
-                          <i class="bi bi-caret-right"></i>
+                          <i class="bi bi-gear"></i>
                         </div>
-                        <div class="menu-title">FAQ</div>
+                        <div class="menu-title">Cài đặt hệ thống</div>
                       </a>
                     </li>
                     <li>
                       <a href="#" class="has-arrow">
                         <div class="child-icon">
-                          <i class="bi bi-caret-right"></i>
-                        </div>
-                        <div class="menu-title">Timeline</div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="has-arrow">
-                        <div class="child-icon">
-                          <i class="bi bi-caret-right"></i>
+                          <i class="bi bi-box-arrow-right"></i>
                         </div>
                         <div class="menu-title">Đăng xuất</div>
                       </a>
