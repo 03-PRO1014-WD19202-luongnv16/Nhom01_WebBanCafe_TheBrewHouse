@@ -1,0 +1,41 @@
+    <!-- Start main wrapper -->
+    <main class="main-wrapper">
+      <div class="main-content">
+        <!-- start breadcrumb -->
+        <div class="page-breadcrumb">
+          <div class="breadcrumb-title">Cập nhật loại hàng</div>
+        </div>
+        <!-- end breadcrumb -->
+        <div class="filter">
+          <div class="col-auto">
+            <div class="btn-ds">
+              <a href="index.php?act=listdm">
+                <button class="btn-primary">
+                  Danh sách loại hàng
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="mb-4">
+              <h5 class="mb-3">Mã loại hàng</h5>
+              <input type="text" name="" id="" class="form-control" disabled>
+            </div>
+            <div class="mb-4 dm">
+              <h5 class="mb-3">Danh mục loại hàng</h5>
+              <select name="" id="">
+                <option value="0">Tất cả</option>
+                <option value="1" selected>Cà phê</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-4">
+            <button class="success">Lưu lại</button>
+            <button class="danger">Hủy bỏ</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- End main wrapper -->
