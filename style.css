@@ -334,3 +334,45 @@ body {
 /* End slide show */
 
 
+
+.boxcontent1 {
+  border-left: 1px #ccc solid;
+  /* border-right: 1px #ccc solid; */
+  border-bottom: 1px #ccc solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  min-height: 200px;
+  padding: 20px;
+  flex: 1; /* Use flex: 1 to make boxcontent1 grow to fill remaining space */
+}
+
+.formtaikhoan input[type="text"],
+.formtaikhoan input[type="password"] {
+  margin-bottom: 8px; /* Giảm khoảng cách dưới cùng của mỗi input */
+  padding: 8px; /* Điều chỉnh padding để làm cho input không quá dày */
+}
+
+.formtaikhoan input[type="text"],
+.formtaikhoan input[type="password"] {
+  width: 80%; /* Điều chỉnh độ rộng thành phần input */
+  max-width: 400px; /* Đặt giới hạn độ rộng tối đa */
+  border: 1px #ccc solid;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.dangki_container{
+  display: flex;
+}
+
+.anh_dangki{
+  border-right: 1px #ccc solid;
+  border-bottom: 1px #ccc solid;
+}
+
+.anh_dangki img{
+  width: 800px;
+  height: 350px;
+  margin: 25px;
+  border-radius: 20px;
+}
