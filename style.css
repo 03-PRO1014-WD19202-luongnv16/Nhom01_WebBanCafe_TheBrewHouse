@@ -375,4 +375,9 @@ body {
   height: 350px;
   margin: 25px;
   border-radius: 20px;
+  transition: transform 0.3s ease; 
+}
+
+.dangki_anh:hover{
+  transform: scale(1.1);
 }
