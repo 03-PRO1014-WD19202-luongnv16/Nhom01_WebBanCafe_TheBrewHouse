@@ -337,25 +337,24 @@ body {
 
 .boxcontent1 {
   border-left: 1px #ccc solid;
-  /* border-right: 1px #ccc solid; */
   border-bottom: 1px #ccc solid;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   min-height: 200px;
   padding: 20px;
-  flex: 1; /* Use flex: 1 to make boxcontent1 grow to fill remaining space */
+  flex: 1; 
 }
 
 .formtaikhoan input[type="text"],
 .formtaikhoan input[type="password"] {
-  margin-bottom: 8px; /* Giảm khoảng cách dưới cùng của mỗi input */
-  padding: 8px; /* Điều chỉnh padding để làm cho input không quá dày */
+  margin-bottom: 8px; 
+  padding: 8px; 
 }
 
 .formtaikhoan input[type="text"],
 .formtaikhoan input[type="password"] {
-  width: 80%; /* Điều chỉnh độ rộng thành phần input */
-  max-width: 400px; /* Đặt giới hạn độ rộng tối đa */
+  width: 80%; 
+  max-width: 400px; 
   border: 1px #ccc solid;
   padding: 5px 10px;
   border-radius: 5px;
@@ -380,4 +379,26 @@ body {
 
 .dangki_anh:hover{
   transform: scale(1.1);
+}
+
+
+
+
+.row {
+  float: left;
+  width: 100%;
+}
+
+.mb {
+  margin-bottom: 20px;
+}
+
+.boxchitiet {
+  width: 100;
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+.mr {
+  margin-right: 2%; 
 }

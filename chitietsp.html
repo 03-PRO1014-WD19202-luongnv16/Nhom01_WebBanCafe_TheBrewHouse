@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header_container">
+        <div class="header_menu1">
+            <ul>
+                <li><a href=""><h4>Trang Chủ</h4></a></li>
+                <li><a href=""><h4>Giới Thiệu</h4></a></li>
+                <li><a href=""><h4>Chi Nhánh</h4></a>
+                </li>
+            </ul>
+        </div>
+        <div class="header_logo">
+            <a href="#"><img class="logo_header" src="img/logo slider.png"></a>
+        </div>
+        <div class="header_menu2">
+            <ul>
+                <li><a href=""><h4>Liên Hệ</h4></a></li>
+                <li><a href=""><h4>Tuyển Dụng</h4></a></li>
+                <li><a href=""><h4>Tạo Tài Khoản</h4></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main_container">
+        <div class="main_danhmuc_slideshow_taikhoan">
+
+            <!-- Danh mục -->
+            <div class="main_danhmuc">
+                <div class="boxtitle"><h4>Danh Mục</h4></div>
+                <div class="boxcontent2 menudoc">
+                    <ul>
+                        <li>
+                            <a href="#">Cà Phê</a>
+                        </li>
+                        <li>
+                            <a href="#">Trà Sữa</a>
+                        </li>
+                        <li>
+                            <a href="#">Đá Xay</a>
+                        </li>
+                        <li>
+                            <a href="#">Nước Ép</a>
+                        </li>  
+                        <li>
+                            <a href="#">Nước Ngọt</a>
+                        </li>
+                        <li>
+                            <a href="#">Bánh Ngọt</a>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Slideshow -->
+            <div class="main_slideshow">
+                <!-- Slideshow container -->
+<div class="slideshow-container">
+
+
+<div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img/slideshow1.webp" style=" height:280px; border-radius: 20px;"> 
+    
+  </div>
+  
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img/slideshow2.webp" style=" height:280px; border-radius: 20px;"> 
+    
+  </div>
+  
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img/slideshow3.webp" style=" height:280px; border-radius: 20px;"> 
+    
+  </div>
+  
+
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+            </div>
+            
+            <!-- Tài khoản -->
+            <div class="main_taikhoan">
+                <div class="boxtitle"><h4>Tài Khoản</h4></div>
+                <div class="boxcontent formtaikhoan">
+                    <form action="#" method="post">
+                        Tên Đăng Nhập<br>
+                        <input type="text" name="user"><br>
+                        Mật Khẩu<br>
+                        <input type="password" name="pass"><br>
+                        <input type="checkbox"> Ghi nhớ tài khoản?<br>
+                        <input type="submit" value="ĐĂNG NHẬP">
+                    </form>
+                    <ul class="formtaikhoan">
+                        <li>
+                            <a href="#">Quên Mật Khẩu</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHI TIẾT SẢN PHẨM -->
+<div class="row mb">
+     <div class="boxchitiet mr">
+        <div class="row mb">
+            <div class="boxtitle"><h4>SẢN PHẨM CHI TIẾT</h4></div>
+            <div class=" row boxcontent">
+                                
+            </div>
+        </div>
+        <div class="row mb">
+            <div class="boxtitle"><h4>BÌNH LUẬN</h4></div>
+            <div class=" row boxcontent">
+                                
+            </div>
+        </div>
+        <div class="row mb">
+            <div class="boxtitle"><h4>SẢN PHẨM CÙNG LOẠI</h4></div>
+            <div class=" row boxcontent">
+                                
+            </div>
+        </div>
+     </div>
+</div>
+    </div>
+    <footer>
+        <div class="footer_thongtin">
+            <img class="hehe" src="img/ftthongtin.png" alt="">
+        </div>
+    </footer>
+    <script>
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 3000); 
+}
+
+    </script>
+</body>
+</html>
