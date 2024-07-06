@@ -431,6 +431,14 @@ a {
   margin-left: 5px;
 }
 
+select.tinh_trang{
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  /* color: #fff; */
+  border-radius: 0.375rem;
+  margin-left: 10px;
+}
 /* Thêm sản phẩm */
 .mb-4 {
   margin-bottom: 1.5rem !important;
