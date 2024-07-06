@@ -69,6 +69,30 @@
                 value="50000"
               />
             </div>
+            <div class="mb-4">
+              <h5 class="mb-3">Size</h5>
+              <input
+                type="text"
+                name=""
+                id=""
+                class="form-control"
+                placeholder="Nhập giá sản phẩm ở đây..."
+                min="0"
+                value="L"
+              />
+            </div>
+            <div class="mb-4">
+              <h5 class="mb-3">Số lượng</h5>
+              <input
+                type="number"
+                name=""
+                id=""
+                class="form-control"
+                placeholder="Nhập số lượng sản phẩm ở đây..."
+                min="0"
+                value="1"
+              />
+            </div>
           </div>
           <div class="mb-4">
             <button class="success">Lưu lại</button>

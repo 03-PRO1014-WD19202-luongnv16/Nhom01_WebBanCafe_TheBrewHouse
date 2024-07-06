@@ -22,9 +22,14 @@
             <div class="mb-4 dm">
               <h5 class="mb-3">Danh mục sản phẩm</h5>
               <select name="" id="">
-                <option value="0" selected>Tất cả</option>
-                <option value="1">Cà phê</option>
-              </select>
+                  <option value="0" selected>Tất cả</option>
+                  <option value="1">Cà Phê</option>
+                  <option value="2">Trà Sữa</option>
+                  <option value="3">Đá Xay</option>
+                  <option value="4">Nước Ép</option>
+                  <option value="5">Nước Ngọt</option>
+                  <option value="6">Bánh Ngọt</option>
+                </select>
             </div>
             <div class="mb-4">
               <h5 class="mb-3">Tên sản phẩm</h5>
@@ -64,6 +69,26 @@
                 id=""
                 class="form-control"
                 placeholder="Nhập giá sản phẩm ở đây..."
+              />
+            </div>
+            <div class="mb-4">
+              <h5 class="mb-3">Size</h5>
+              <input
+                type="text"
+                name=""
+                id=""
+                class="form-control"
+                placeholder="Nhập size sản phẩm ở đây..."
+              />
+            </div>
+            <div class="mb-4">
+              <h5 class="mb-3">Số lượng</h5>
+              <input
+                type="number"
+                name=""
+                id=""
+                class="form-control"
+                placeholder="Nhập số lượng sản phẩm ở đây..."
               />
             </div>
           </div>

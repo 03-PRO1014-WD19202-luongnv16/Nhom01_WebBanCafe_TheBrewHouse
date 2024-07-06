@@ -19,10 +19,13 @@
           </div>
           <div class="col-auto">
             <select name="" id="">
-              <option value="">Tất cả</option>
-              <option value="">Trà Sữa</option>
-              <option value="">Cà phê</option>
-              <option value="">Kem</option>
+              <option value="0" selected>Tất cả</option>
+              <option value="1">Cà Phê</option>
+              <option value="2">Trà Sữa</option>
+              <option value="3">Đá Xay</option>
+              <option value="4">Nước Ép</option>
+              <option value="5">Nước Ngọt</option>
+              <option value="6">Bánh Ngọt</option>
             </select>
           </div>
           <div class="col-auto">
@@ -47,7 +50,6 @@
                       <th>Tên sản phẩm</th>
                       <th>Giá</th>
                       <th>Danh mục</th>
-                      <th>Ngày mua</th>
                       <th>Chức năng</th>
                     </tr>
                   </thead>
@@ -60,7 +62,7 @@
                         <div class="product">
                           <div class="product-box">
                             <img
-                              src="../images/1.png"
+                              src="images/1.png"
                               alt=""
                               width="70"
                               class="rounded-3"
@@ -75,7 +77,6 @@
                       </td>
                       <td>48.000<u>đ</u></td>
                       <td>Cà Phê</td>
-                      <td>01/07/2024</td>
                       <td>
                         <a href="index.php?act=updatesp" class="sua">
                           <i class="bi bi-pencil-square"></i>
@@ -93,7 +94,7 @@
                         <div class="product">
                           <div class="product-box">
                             <img
-                              src="../images/1.png"
+                              src="images/1.png"
                               alt=""
                               width="70"
                               class="rounded-3"
@@ -108,7 +109,6 @@
                       </td>
                       <td>48.000<u>đ</u></td>
                       <td>Cà Phê</td>
-                      <td>01/07/2024</td>
                       <td>
                         <a href="#" class="sua">
                           <i class="bi bi-pencil-square"></i>
@@ -126,7 +126,7 @@
                         <div class="product">
                           <div class="product-box">
                             <img
-                              src="../images/1.png"
+                              src="images/1.png"
                               alt=""
                               width="70"
                               class="rounded-3"
@@ -141,7 +141,6 @@
                       </td>
                       <td>48.000<u>đ</u></td>
                       <td>Cà Phê</td>
-                      <td>01/07/2024</td>
                       <td>
                         <a href="#" class="sua">
                           <i class="bi bi-pencil-square"></i>
@@ -159,7 +158,7 @@
                         <div class="product">
                           <div class="product-box">
                             <img
-                              src="../images/1.png"
+                              src="images/1.png"
                               alt=""
                               width="70"
                               class="rounded-3"
@@ -174,7 +173,6 @@
                       </td>
                       <td>48.000<u>đ</u></td>
                       <td>Cà Phê</td>
-                      <td>01/07/2024</td>
                       <td>
                         <a href="#" class="sua">
                           <i class="bi bi-pencil-square"></i>
@@ -192,7 +190,7 @@
                         <div class="product">
                           <div class="product-box">
                             <img
-                              src="../images/1.png"
+                              src="images/1.png"
                               alt=""
                               width="70"
                               class="rounded-3"
@@ -207,7 +205,6 @@
                       </td>
                       <td>48.000<u>đ</u></td>
                       <td>Cà Phê</td>
-                      <td>01/07/2024</td>
                       <td>
                         <a href="update.html" class="sua">
                           <i class="bi bi-pencil-square"></i>
