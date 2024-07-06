@@ -27,6 +27,7 @@
                       <th></th>
                       <th>ID</th>
                       <th>Tên danh mục</th>
+                      <th>Trạng thái</th>
                       <th>Chức năng</th>
                     </tr>
                   </thead>
@@ -37,6 +38,7 @@
                       </td>
                       <td>001</td>
                       <td>Cà Phê</td>
+                      <td>Not delete</td>
                       <td>
                         <a href="index.php?act=updatedm" class="sua">
                           <i class="bi bi-pencil-square"></i>
@@ -52,6 +54,7 @@
                       </td>
                       <td>001</td>
                       <td>Cà Phê</td>
+                      <td>Not delete</td>
                       <td>
                         <a href="index.php?act=updatedm" class="sua">
                           <i class="bi bi-pencil-square"></i>
@@ -67,6 +70,7 @@
                       </td>
                       <td>001</td>
                       <td>Cà Phê</td>
+                      <td>Not delete</td>
                       <td>
                         <a href="update.html" class="sua">
                           <i class="bi bi-pencil-square"></i>
@@ -82,6 +86,7 @@
                       </td>
                       <td>001</td>
                       <td>Cà Phê</td>
+                      <td>Not delete</td>
                       <td>
                         <a href="update.html" class="sua">
                           <i class="bi bi-pencil-square"></i>
@@ -97,6 +102,7 @@
                       </td>
                       <td>001</td>
                       <td>Cà Phê</td>
+                      <td>Not delete</td>
                       <td>
                         <a href="update.html" class="sua">
                           <i class="bi bi-pencil-square"></i>
@@ -115,10 +121,3 @@
       </div>
     </main>
     <!-- End main wrapper -->
-    <!-- Start footer -->
-    <footer class="page-footer">
-      <p class="mb-0">Copyright © 2021. All right reserved.</p>
-    </footer>
-    <!-- End footer -->
-  </body>
-</html>

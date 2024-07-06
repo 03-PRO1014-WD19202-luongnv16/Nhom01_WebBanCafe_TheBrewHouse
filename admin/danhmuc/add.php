@@ -28,7 +28,12 @@
                 <h5 class="mb-3">Danh mục loại hàng</h5>
                 <select name="" id="">
                   <option value="0" selected>Tất cả</option>
-                  <option value="1">Cà phê</option>
+                  <option value="1">Cà Phê</option>
+                  <option value="2">Trà Sữa</option>
+                  <option value="3">Đá Xay</option>
+                  <option value="4">Nước Ép</option>
+                  <option value="5">Nước Ngọt</option>
+                  <option value="6">Bánh Ngọt</option>
                 </select>
               </div>
               <div class="mb-4">
