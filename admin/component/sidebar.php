@@ -46,7 +46,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="index.php?act=listgiohang" class="has-arrow">
+                      <a href="index.php?act=listdh" class="has-arrow">
                         <div class="child-icon">
                         <i class="bi bi-cart3"></i>
                         </div>
