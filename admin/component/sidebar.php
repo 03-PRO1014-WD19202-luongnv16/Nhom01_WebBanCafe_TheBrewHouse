@@ -22,7 +22,7 @@
                     </li>
                     <li class="menu-label">Quản lý</li>
                     <li>
-                      <a href="index.php?act=adddm" class="has-arrow">
+                      <a href="#" class="has-arrow">
                         <div class="child-icon">
                           <i class="bi bi-people"></i>
                         </div>
