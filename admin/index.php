@@ -27,6 +27,12 @@
         include './sanpham/update.php';
         break;
       //Giỏ hàng  
+      case 'listdh':
+        include './donhang/list.php';
+        break;
+      case 'updatedh':
+        include './donhang/update.php';
+        break;
       default:
         include './component/home.php';
         break;
