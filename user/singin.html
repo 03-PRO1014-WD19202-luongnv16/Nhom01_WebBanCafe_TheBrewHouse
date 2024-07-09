@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://i.pinimg.com/736x/12/72/ee/1272ee17363d399a2da26645c307a68d.jpg"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <title>Singint</title>
+  </head>
+  <body>
+    <section id="header">
+      <a href="./index.html">
+        <img src="./img/logo.png" alt="" />
+      </a>
+
+      <div>
+        <ul id="navbar">
+          <li>
+            <a href="index.html">Trang chủ</a>
+          </li>
+          <li>
+            <a href="shop.html">Sản phẩm</a>
+          </li>
+          <li>
+            <a href="contact.html">Liên hệ</a>
+          </li>
+          <li>
+            <a href="blog.html">Blog</a>
+          </li>
+          <li id="lg-bag">
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+          </li>
+          <button class="normal" onclick="window.location.href='signin.html';">
+            Đăng nhập
+          </button>
+          <button class="normal" onclick="window.location.href='signup.html';">
+            Đăng ký
+          </button>
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i> </a>
+        </ul>
+        <div id="mobile">
+          <a href="cart.html"
+            ><i class="fa-solid fa-bag-shopping"></i>Giỏ hàng</a
+          >
+          <i id="bar" class="fa-solid fa-outdent"></i>
+        </div>
+      </div>
+    </section>
+
+    <section id="sign-page" class="sign-in">
+      <h2>Đăng Nhập</h2>
+      <p>Đăng nhập để bắt đầu trải nghiệm những sản phẩm của chúng tôi!</p>
+    </section>
+
+    <section id="form-login" class="section-p1">
+      <form action="../handleSignin.php" method="post">
+        <h2>Đăng Nhập</h2>
+        <div class="form-group">
+          <i class="fa-solid fa-envelope"></i>
+          <input placeholder="Email" type="email" name="user-email" />
+        </div>
+        <div class="form-group">
+          <i class="fa-solid fa-lock"></i>
+          <input placeholder="Mật khẩu" type="password" name="user-password" />
+        </div>
+        <div class="form-text">
+          <div class="form-text-left">
+            <input type="checkbox" id="checkbox" />
+            <label for="checkbox">Ghi nhớ đăng nhập</label>
+          </div>
+          <div class="form-text-right">
+            <a href="">Quên mật khẩu</a>
+          </div>
+        </div>
+        <input type="submit" value="Đăng nhập" class="btn-sigup" />
+        <div class="form-create">
+          Bạn có chưa có tài khoản <a href="./signup.html">Tạo tài khoản</a>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
