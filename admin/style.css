@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(./images/body-background-1.webp);
+  /* background-image: url(./images/body-background-1.webp); */
   color: #d3d7dc;
   background-color: #181f4a;
   background-attachment: fixed;
@@ -220,7 +220,10 @@ img {
 .main-wrapper {
   margin-top: 70px;
   padding-bottom: 20px;
+  background-color: #fff;
   margin-left: 260px;
+  color: #000;
+  height: 100%;
   transition: ease-out 0.3s;
 }
 .main-wrapper .main-content {
@@ -231,7 +234,7 @@ img {
   align-items: center !important;
 }
 .main-wrapper .main-content .page-breadcrumb .breadcrumb-title {
-  color: #e6ecf0;
+  /* color: #e6ecf0; */
   font-size: 20px;
   padding-right: 1rem !important;
 }
@@ -542,7 +545,9 @@ h5 {
   align-items: center;
   justify-content: center;
   height: 40px;
+  color: #000;
   position: absolute;
+
   left: 260px;
   right: 0;
   bottom: 0;
