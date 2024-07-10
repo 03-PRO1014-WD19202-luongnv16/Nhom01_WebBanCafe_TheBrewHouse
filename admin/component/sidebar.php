@@ -15,9 +15,9 @@
                     <li>
                       <a href="index.php" class="has-arrow">
                         <div class="parent-icon">
-                          <i class="bi bi-house-door"></i>
+                          <i class="bi bi-speedometer"></i>
                         </div>
-                        <div class="menu-title">Trang chủ</div>
+                        <div class="menu-title">Bảng điều khiển</div>
                       </a>
                     </li>
                     <li class="menu-label">Quản lý</li>
