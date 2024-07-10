@@ -42,181 +42,67 @@
         <div class="card">
           <div class="card-body">
             <div class="product-table">
+              <form action="" method="post">
               <div class="table-responsive">
                 <table class="table">
                   <thead class="table-light">
                     <tr>
                       <th></th>
                       <th>Tên sản phẩm</th>
-                      <th>Giá</th>
-                      <th>Danh mục</th>
+                      <th>Giá nhập</th>
+                      <th>Giá sale</th>
+                      <th>Giá niêm yết</th>
+                      <th>Tồn kho</th>
                       <th>Chức năng</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <?php foreach($listsanpham as $sp){
+                      extract($sp);
+                      $suasp="index.php?act=suasp&id=".$id;
+                      $xoasp="index.php?act=xoasp&id=".$id;
+                      $hinhpath= ".././upload/".$img;
+                      if(is_file($hinhpath)){
+                        $img="<img src='".$hinhpath."'height='100' width='100'>";
+                      }else{
+                        $img="no photo";
+                      }
+                      echo '
+                        <tr>
                       <td>
                         <input type="checkbox" class="form-check-input" />
                       </td>
                       <td>
                         <div class="product">
                           <div class="product-box">
-                            <img
-                              src="images/1.png"
-                              alt=""
-                              width="70"
-                              class="rounded-3"
-                            />
+                            '.$img.'
                           </div>
                           <div class="product-info">
                             <a href="#" class="product-title"
-                              >Cà Phê Sữa Đá Hòa Tan</a
-                            >
+                              >'.$name.'</a>
                           </div>
                         </div>
                       </td>
-                      <td>48.000<u>đ</u></td>
-                      <td>Cà Phê</td>
+                      <td>'.$import_price.'<u>đ</u></td>
+                      <td>'.$sale_price.'<u>đ</u></td>
+                      <td>'.$listed_price.'<u>đ</u></td>
+                      <td>'.$stock.'</td>
                       <td>
-                        <a href="index.php?act=updatesp" class="sua">
+                        <a href="'.$suasp.'" class="sua">
                           <i class="bi bi-pencil-square"></i>
                         </a>
-                        <a href="#" class="xoa">
+                        <a onclick="return confirm(\'Bạn có muốn xoá không?\')" href="'.$xoasp.'" class="xoa">
                           <i class="bi bi-trash"></i>
                         </a>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <input type="checkbox" class="form-check-input" />
-                      </td>
-                      <td>
-                        <div class="product">
-                          <div class="product-box">
-                            <img
-                              src="images/1.png"
-                              alt=""
-                              width="70"
-                              class="rounded-3"
-                            />
-                          </div>
-                          <div class="product-info">
-                            <a href="#" class="product-title"
-                              >Cà Phê Sữa Đá Hòa Tan</a
-                            >
-                          </div>
-                        </div>
-                      </td>
-                      <td>48.000<u>đ</u></td>
-                      <td>Cà Phê</td>
-                      <td>
-                        <a href="#" class="sua">
-                          <i class="bi bi-pencil-square"></i>
-                        </a>
-                        <a href="#" class="xoa">
-                          <i class="bi bi-trash"></i>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input type="checkbox" class="form-check-input" />
-                      </td>
-                      <td>
-                        <div class="product">
-                          <div class="product-box">
-                            <img
-                              src="images/1.png"
-                              alt=""
-                              width="70"
-                              class="rounded-3"
-                            />
-                          </div>
-                          <div class="product-info">
-                            <a href="#" class="product-title"
-                              >Cà Phê Sữa Đá Hòa Tan</a
-                            >
-                          </div>
-                        </div>
-                      </td>
-                      <td>48.000<u>đ</u></td>
-                      <td>Cà Phê</td>
-                      <td>
-                        <a href="#" class="sua">
-                          <i class="bi bi-pencil-square"></i>
-                        </a>
-                        <a href="#" class="xoa">
-                          <i class="bi bi-trash"></i>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input type="checkbox" class="form-check-input" />
-                      </td>
-                      <td>
-                        <div class="product">
-                          <div class="product-box">
-                            <img
-                              src="images/1.png"
-                              alt=""
-                              width="70"
-                              class="rounded-3"
-                            />
-                          </div>
-                          <div class="product-info">
-                            <a href="#" class="product-title"
-                              >Cà Phê Sữa Đá Hòa Tan</a
-                            >
-                          </div>
-                        </div>
-                      </td>
-                      <td>48.000<u>đ</u></td>
-                      <td>Cà Phê</td>
-                      <td>
-                        <a href="#" class="sua">
-                          <i class="bi bi-pencil-square"></i>
-                        </a>
-                        <a href="#" class="xoa">
-                          <i class="bi bi-trash"></i>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input type="checkbox" class="form-check-input" />
-                      </td>
-                      <td>
-                        <div class="product">
-                          <div class="product-box">
-                            <img
-                              src="images/1.png"
-                              alt=""
-                              width="70"
-                              class="rounded-3"
-                            />
-                          </div>
-                          <div class="product-info">
-                            <a href="#" class="product-title"
-                              >Cà Phê Sữa Đá Hòa Tan</a
-                            >
-                          </div>
-                        </div>
-                      </td>
-                      <td>48.000<u>đ</u></td>
-                      <td>Cà Phê</td>
-                      <td>
-                        <a href="update.html" class="sua">
-                          <i class="bi bi-pencil-square"></i>
-                        </a>
-                        <a href="#" class="xoa">
-                          <i class="bi bi-trash"></i>
-                        </a>
-                      </td>
-                    </tr>
+                      ';
+                    }
+                    ?>
                   </tbody>
                 </table>
               </div>
+              </form>
             </div>
           </div>
         </div>

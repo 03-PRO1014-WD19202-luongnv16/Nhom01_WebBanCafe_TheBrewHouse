@@ -1,3 +1,14 @@
+<?php
+  if(is_array($sp)){
+    extract($sp);
+  }
+  $hinhpath=".././upload/".$img;
+  if(is_file($hinhpath)){
+    $img="<img src='".$hinhpath."'height='100' width='200'>";
+  }else{
+    $img="no photo";
+  }
+?>
     <!-- Start main wrapper -->
     <main class="main-wrapper">
       <div class="main-content">
@@ -19,85 +30,105 @@
         </div>
         <div class="card">
           <div class="card-body">
+           <form action="index.php?act=updatesp" method="post" enctype="multipart/form-data">
             <div class="mb-4 dm">
-              <h5 class="mb-3">Danh mục sản phẩm</h5>
-              <select name="" id="">
-                <option value="0" >Tất cả</option>
-                <option value="1" selected>Cà phê</option>
-              </select>
+                <h5 class="mb-3">Danh mục sản phẩm</h5>
+                <select name="iddm" id="">
+                    <option value="0" selected>Tất cả</option>
+                    <?php 
+                      foreach($listdanhmuc as $danhmuc){
+                        if($iddm==$danhmuc['id']) $s="selected";else $s="";
+                          echo '<option value="'.$danhmuc['id'].'" '.$s.'>'.$danhmuc['name'].'</option>';
+                      }
+                    ?>
+            </select>
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-3">Tên sản phẩm</h5>
+                <input
+                  type="text"
+                  name="name"
+                  id=""
+                  class="form-control"
+                  placeholder="Nhập tên sản phẩm ở đây..."
+                  value="<?=$name?>"
+                />
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-3">Mô tả</h5>
+                <textarea
+                  class="form-control"
+                  cols="4"
+                  rows="6"
+                  name="mota"
+                  placeholder="Nhập mô tả ở đây.."
+                  style="height: 149px"
+                ><?=$mota?></textarea>
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-3">Ảnh</h5>
+                <input
+                  type="file"
+                  name="img"
+                  id=""
+                  class="form-control"
+                />
+                <?=$img?>
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-3">Giá Nhập</h5>
+                <input
+                  type="number"
+                  name="import_price"
+                  id=""
+                  class="form-control"
+                  placeholder="Nhập giá nhập sản phẩm ở đây..."
+                  value="<?=$import_price?>"
+                />
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-3">Giá Sale</h5>
+                <input
+                  type="number"
+                  name="sale_price"
+                  id=""
+                  class="form-control"
+                  placeholder="Nhập giá sale sản phẩm ở đây..."
+                  value="<?=$sale_price?>"
+                />
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-3">Giá Niêm Yết</h5>
+                <input
+                  type="number"
+                  name="listed_price"
+                  id=""
+                  class="form-control"
+                  placeholder="Nhập giá niêm yết sản phẩm ở đây..."
+                  value="<?=$listed_price?>"
+                />
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-3">Tồn kho</h5>
+                <input
+                  type="text"
+                  name="stock"
+                  id=""
+                  class="form-control"
+                  placeholder="Nhập tồn kho sản phẩm ở đây..."
+                  value="<?=$stock?>"
+                />
+              </div>
             </div>
             <div class="mb-4">
-              <h5 class="mb-3">Tên sản phẩm</h5>
-              <input
-                type="text"
-                name=""
-                id=""
-                class="form-control"
-                placeholder="Nhập tên sản phẩm ở đây..."
-                value="Cà Phê Sữa Đá Hòa Tan"
-              />
+              <input type="hidden" name="id" value="<?=$id?>">
+                <input type="submit" value="Lưu lại" name="luulai" class="success">
+                <input type="reset" value="Hủy bỏ" class="danger">
             </div>
-            <div class="mb-4">
-              <h5 class="mb-3">Ảnh</h5>
-              <input
-                type="file"
-                name=""
-                id=""
-                class="form-control"
-              />
-              <img src="./images/1.png" width="100px" height="100px" alt="">
-            </div>
-            <div class="mb-4">
-              <h5 class="mb-3">Mô tả</h5>
-              <textarea
-                class="form-control"
-                cols="4"
-                rows="6"
-                placeholder="Nhập mô tả ở đây.."
-                style="height: 149px"
-              >Cà phê ngon</textarea>
-            </div>
-            <div class="mb-4">
-              <h5 class="mb-3">Giá</h5>
-              <input
-                type="number"
-                name=""
-                id=""
-                class="form-control"
-                placeholder="Nhập giá sản phẩm ở đây..."
-                min="0"
-                value="50000"
-              />
-            </div>
-            <div class="mb-4">
-              <h5 class="mb-3">Size</h5>
-              <input
-                type="text"
-                name=""
-                id=""
-                class="form-control"
-                placeholder="Nhập giá sản phẩm ở đây..."
-                min="0"
-                value="L"
-              />
-            </div>
-            <div class="mb-4">
-              <h5 class="mb-3">Số lượng</h5>
-              <input
-                type="number"
-                name=""
-                id=""
-                class="form-control"
-                placeholder="Nhập số lượng sản phẩm ở đây..."
-                min="0"
-                value="1"
-              />
-            </div>
-          </div>
-          <div class="mb-4">
-            <button class="success">Lưu lại</button>
-            <button class="danger">Hủy bỏ</button>
-          </div>
+            <?php
+                if(isset($thongbao)&&($thongbao!="")) echo $thongbao;
+            ?>
+           </form>
         </div>
       </div>
     </main>
