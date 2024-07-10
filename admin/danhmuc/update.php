@@ -1,9 +1,14 @@
+<?php
+  if(is_array($dm)){
+    extract($dm);
+  }
+?>
     <!-- Start main wrapper -->
     <main class="main-wrapper">
       <div class="main-content">
         <!-- start breadcrumb -->
         <div class="page-breadcrumb">
-          <div class="breadcrumb-title">Cập nhật loại hàng</div>
+          <div class="breadcrumb-title">Thêm mới loại hàng</div>
         </div>
         <!-- end breadcrumb -->
         <div class="filter">
@@ -19,28 +24,27 @@
         </div>
         <div class="card">
           <div class="card-body">
-            <div class="mb-4">
-              <h5 class="mb-3">Mã loại hàng</h5>
-              <input type="text" name="" id="" class="form-control" disabled>
-            </div>
-            <div class="mb-4 dm">
-              <h5 class="mb-3">Danh mục loại hàng</h5>
-              <select name="" id="">
-                  <option value="0" >Tất cả</option>
-                  <option value="1" selected>Cà Phê</option>
-                  <option value="2">Trà Sữa</option>
-                  <option value="3">Đá Xay</option>
-                  <option value="4">Nước Ép</option>
-                  <option value="5">Nước Ngọt</option>
-                  <option value="6">Bánh Ngọt</option>
-                </select> 
-            </div>
-          </div>
-          <div class="mb-4">
-            <button class="success">Lưu lại</button>
-            <button class="danger">Hủy bỏ</button>
+            <form action="index.php?act=updatedm" method="post">
+              <div class="mb-4">
+                <h5 class="mb-3">Mã loại hàng</h5>
+                <input type="text" name="" id="" class="form-control" disabled>
+              </div>
+              <div class="mb-4 dm">
+                <h5 class="mb-3">Danh mục loại hàng</h5>
+                <input class="form-control" type="text" name="name" id="" value ="<?php if(isset($name)&&($name!="")) echo $name;?>" />
+              </div>
+              <div class="mb-4">
+                <input type="hidden" name="id" value ="<?php if(isset($id)&&($id>0)) echo $id;?>">
+                <input type="submit" value="Lưu lại" name="luulai" class="success">
+                <input type="reset" value="Hủy bỏ" class="danger">
+              </div>
+              <?php
+                if(isset($thongbao)&&($thongbao!="")) echo $thongbao;
+              ?>
+            </form>
           </div>
         </div>
       </div>
     </main>
     <!-- End main wrapper -->
+

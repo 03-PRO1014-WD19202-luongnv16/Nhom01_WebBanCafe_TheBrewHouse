@@ -26,20 +26,15 @@
               </div>
               <div class="mb-4 dm">
                 <h5 class="mb-3">Danh mục loại hàng</h5>
-                <select name="" id="">
-                  <option value="0" selected>Tất cả</option>
-                  <option value="1">Cà Phê</option>
-                  <option value="2">Trà Sữa</option>
-                  <option value="3">Đá Xay</option>
-                  <option value="4">Nước Ép</option>
-                  <option value="5">Nước Ngọt</option>
-                  <option value="6">Bánh Ngọt</option>
-                </select>
+                <input type="text" name="name" id="" class="form-control" placeholder="Nhập tên danh mục...">
               </div>
               <div class="mb-4">
-                <button class="success">Lưu lại</button>
-                <button class="danger">Hủy bỏ</button>
+                <input type="submit" value="Lưu lại" name="luulai" class="success">
+                <input type="reset" value="Hủy bỏ" class="danger">
               </div>
+              <?php
+                if(isset($thongbao)&&($thongbao!="")) echo $thongbao;
+              ?>
             </form>
           </div>
         </div>
