@@ -25,4 +25,4 @@ function insert_sanpham($name,$mota,$img,$import_price,$sale_price,$listed_price
     }
     pdo_execute($sql);
   }
-?>
+?> 

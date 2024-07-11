@@ -19,5 +19,5 @@
   function update_danhmuc($id,$name){
     $sql = "UPDATE danhmuc SET name = '$name' WHERE id =" .$id;
     pdo_execute($sql);
-  }
+  } 
 ?>
