@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Brew House</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylee.css">
 </head>
 <body>
     <div class="box_container">
         <div class="header_container">
             <div class="header_menu1">
                 <ul>
-                    <li><a href="http://localhost/Nhom01_WebBanCafe_TheBrewHouse/index.php"><h4>Trang Chủ</h4></a></li>
+                    <li><a href="index.php"><h4>Trang Chủ</h4></a></li>
                     <li class="dropdown" onmouseover="showProductDropdown()" onmouseout="hideProductDropdown()">
                         <a href="#"><h4>Sản Phẩm</h4></a>
                         <div class="dropdown-content" id="productDropdownContent">
