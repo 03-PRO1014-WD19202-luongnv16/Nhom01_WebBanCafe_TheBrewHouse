@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Brew House</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box_container">
+        <div class="header_container">
+            <div class="header_menu1">
+                <ul>
+                    <li><a href=""><h4>Trang Chủ</h4></a></li>
+                    <li class="dropdown" onmouseover="showProductDropdown()" onmouseout="hideProductDropdown()">
+                        <a href="#"><h4>Sản Phẩm</h4></a>
+                        <div class="dropdown-content" id="productDropdownContent">
+                            <a href="#">Cà Phê</a>
+                            <a href="#">Trà Sữa</a>
+                            <a href="#">Trà Đào</a>
+                            <a href="#">Đá Xay</a>
+                            <a href="#">Nước Ép</a>
+                            <a href="#">Nước Ngọt</a>
+                            <a href="#">Bánh Ngọt</a>
+                        </div>
+                    </li>
+                    <li><a href=""><h4>Chi Nhánh</h4></a></li>
+                </ul>
+            </div>
+            <div class="header_logo">
+                <a href="#"><img class="logo_header" src="img/logo slider.png"></a>
+            </div>
+            <div class="header_menu2">
+                <ul>
+                    <li><a href=""><h4>Liên Hệ</h4></a></li>
+                    <li><a href=""><h4>Giới Thiệu</h4></a></li>
+                    <li class="dropdown" onmouseover="showDropdown()" onmouseout="hideDropdown()">
+                        <a href="#"><h4>Tài Khoản</h4></a>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a href="#">Đăng Nhập</a>
+                            <a href="#">Đăng Ký</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main_container">
+            <!-- Danh mục Slideshow Tài khoản -->
+            <div class="main_danhmuc_slideshow_taikhoan">
+                <!-- Slideshow -->
+                <div class="main_slideshow">
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="img/slideshow1.webp" style="height:280px; border-radius: 20px;">
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="img/slideshow2.webp" style="height:280px; border-radius: 20px;">
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="img/slideshow3.webp" style="height:280px; border-radius: 20px;">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+            <div class="gioithieu">
+                <img class="anh_gioithieu" src="img/anhgioithieu.png" alt="">
+            </div>
+
+            <!-- Top sản phẩm yêu thích -->
+            <div class="like">
+                <div class="boxtitle"><h4>SẢN PHẨM YÊU THÍCH</h4></div>
+                <div class="like">
+                    <div class="mb10 top">
+                        <img src="./img/logo slider.png" alt="">
+                        <a href="#">Đồ uống</a>
+                    </div>
+                    <!-- Các sản phẩm yêu thích khác -->
+                </div>
+            </div>
+
+            <div class="gioithieu">
+                <img class="anh_gioithieu" src="img/anhgioithieu.png" alt="">
+            </div>
+
+            <!-- Sản phẩm nổi bật -->
+            <div class="like">
+                <div class="boxtitle"><h4>SẢN PHẨM NỔI BẬT</h4></div>
+                <div class="like">
+                    <div class="mb10 noibat">
+                        <img src="./img/logo slider.png" alt="">
+                        <a href="#">Đồ uống</a>
+                    </div>
+                    <!-- Các sản phẩm nổi bật khác -->
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="footer_thongtin">
+                <img class="hehe" src="img/ftthongtin.png" alt="">
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showDropdown() {
+            document.getElementById("dropdownContent").style.display = "block";
+        }
+
+        function hideDropdown() {
+            document.getElementById("dropdownContent").style.display = "none";
+        }
+
+        function showProductDropdown() {
+            document.getElementById("productDropdownContent").style.display = "block";
+        }
+
+        function hideProductDropdown() {
+            document.getElementById("productDropdownContent").style.display = "none";
+        }
+    </script>
+</body>
+</html>
