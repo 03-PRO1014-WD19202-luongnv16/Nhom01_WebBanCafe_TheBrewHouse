@@ -1,15 +1,8 @@
 <?php
 session_start();
+include "view/header.php";
 include "model/pdo.php";
-include "model/sanpham.php";
-include "model/danhmuc.php";
 include "model/taikhoan.php";
-include "global.php";
-$listdanhmuc = loadAll_danhmuc();
-$spnew = loadall_sanpham_home();
-$dstop10 = loadall_sanpham_top10();
-include "./view/header.php";
-
 
 if(isset($_GET['act']) && $_GET['act'] !== "") {
     $act = $_GET['act'];
@@ -17,6 +10,7 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
         case 'chinhanh':
             include "view/chinhanh.php";
             break;
+
         case 'lienhe':
             include "view/lienhe.php";
             break;
@@ -54,29 +48,7 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
         case 'thoat':
                 session_unset();
                 header('Location: index.php');
-            break;
-
-        case 'sanphamct':
-            if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
-                $id = $_GET['idsp'];
-                $onesp = loadone_sanpham($id);
-                include "view/sanphamct.php";
-            }else{
-                include "view/home.php";
-            }
-            break;
-
-            case 'sanpham':
-                if(isset($_GET['iddm']) && ($_GET['iddm'] > 0)){
-                    $iddm = $_GET['iddm'];
-                    $dssp = loadall_sanpham_dm($iddm);
-                    include "view/sanpham.php";
-                } else {
-                    include "view/home.php";
-                }
                 break;
-            
-
         default:
             include "view/home.php";
             break;
