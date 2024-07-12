@@ -31,7 +31,18 @@
             <div class="like">
                 <div class="boxtitle"><h4>SẢN PHẨM YÊU THÍCH</h4></div>
                 <div class="like">
-                    <div class="mb10 top">
+                <?php
+                            foreach($dstop10 as $sp){
+                                extract($sp);
+                                $linksp="index.php?act=sanphamct&idsp=".$id;
+                                $img=$img_path.$img;
+                                echo '<div class="mb10 noibat">
+                                          <img src="'.$img.'" alt="">
+                                          <a href="'.$linksp.'">'.$name.'</a>
+                                      </div>';
+                            }
+                        ?>
+                    <!-- <div class="mb10 top">
                         <img src="./img/logo slider.png" alt="">
                         <a href="#">Đồ uống</a>
                     </div>
@@ -62,7 +73,7 @@
                     <div class="mb10 top">
                         <img src="./img/logo slider.png" alt="">
                         <a href="#">Đồ uống</a>
-                    </div>
+                    </div> -->
                     
                     <!-- Các sản phẩm yêu thích khác -->
                 </div>
@@ -76,7 +87,20 @@
             <div class="like">
                 <div class="boxtitle"><h4>SẢN PHẨM NỔI BẬT</h4></div>
                 <div class="like">
-                    <div class="mb10 noibat">
+                <?php
+                
+                         foreach($spnew as $sp){
+                                extract($sp);
+                                $hinh=$img_path.$img;
+                                echo '<div class="mb10 noibat">
+                                           <img src="'.$hinh.'" alt="">
+                                           <a href="#">'.$name.'</a>
+                                           <p>'.$sale_price.'</p>
+                                    </div>';
+                            
+                         }
+                    ?>
+                    <!-- <div class="mb10 noibat">
                         <img src="./img/logo slider.png" alt="">
                         <a href="#">Đồ uống</a>
                     </div>
@@ -107,7 +131,7 @@
                     <div class="mb10 noibat">
                         <img src="./img/logo slider.png" alt="">
                         <a href="#">Đồ uống</a>
-                    </div>
+                    </div> -->
                     <!-- Các sản phẩm nổi bật khác -->
                 </div>
             </div>
