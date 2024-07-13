@@ -29,8 +29,10 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
             if(isset($_POST['dangky'])) { 
                 $email = $_POST['email'];
                 $user = $_POST['user'];
-                $pass = $_POST['pass'];                   
-                insert_taikhoan($email, $user, $pass); 
+                $pass = $_POST['pass'];
+                $address = $_POST['address'];
+                $tel = $_POST['tel'];                   
+                insert_taikhoan($email, $user, $pass, $address, $tel); 
             }
             include "view/taikhoan/dangky.php";
             break;

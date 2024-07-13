@@ -91,10 +91,11 @@
                 
                          foreach($spnew as $sp){
                                 extract($sp);
+                                $linksp="index.php?act=sanphamct&idsp=".$id;
                                 $hinh=$img_path.$img;
                                 echo '<div class="mb10 noibat">
                                            <img src="'.$hinh.'" alt="">
-                                           <a href="#">'.$name.'</a>
+                                           <a href="'.$linksp.'">'.$name.'</a>
                                            <p>'.$sale_price.'</p>
                                     </div>';
                             
