@@ -39,6 +39,7 @@
                     <li class="dropdown" onmouseover="showDropdown()" onmouseout="hideDropdown()">
                         <?php if(isset($_SESSION['user'])): ?>
                             <li><a href="#"><h4>Giỏ Hàng</h4></a></li>
+                            <li><a href="index.php?act=edit_taikhoan"><h4>Cập nhật tài khoản</h4></a></li>
                            <li><a href="index.php?act=thoat"><h4>Thoát</h4></a></li>
                            <p style="color:red";>XIN CHÀO!</p>
                             </div>
