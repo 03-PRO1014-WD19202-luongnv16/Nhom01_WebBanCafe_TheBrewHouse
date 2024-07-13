@@ -1,0 +1,497 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  width: 90%;
+  margin: 0 auto;
+  color: #212529;
+}
+
+.box_container {
+  width: 100%;
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  background-color: burlywood;
+  border-radius: 20px;
+}
+
+.logo_header {
+  width: 200px;
+  height: 100px;
+  transition: transform 0.3s ease;
+  margin-top: -20px;
+}
+
+.logo_header:hover {
+  transform: scale(1.3);
+}
+
+.header_menu1 ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin-left: 100px;
+}
+
+.header_menu1 ul li {
+  margin-right: 20px;
+}
+
+.header_menu1 ul li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
+
+.header_menu1 ul li a:hover {
+  color: white;
+}
+
+.header_menu2 ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin-right: 100px;
+}
+
+.header_menu2 ul li {
+  margin-right: 20px;
+}
+
+.header_menu2 ul li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s;
+}
+
+.header_menu2 ul li a:hover {
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 20px;
+  background-color: burlywood;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: grey;
+}
+
+.main_container {
+  transition: all 0.3s ease;
+}
+
+.main_danhmuc_slideshow_taikhoan {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.main_danhmuc,
+.main_slideshow,
+.main_taikhoan {
+  width: 20%;
+}
+
+.boxtitle {
+  color: #333;
+  padding: 10px;
+  background-color: burlywood;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px #ccc solid;
+  width: 100%;
+  text-align: center;
+}
+
+.boxcontent {
+  border-left: 1px #ccc solid;
+  border-right: 1px #ccc solid;
+  border-bottom: 1px #ccc solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  min-height: 200px;
+  padding: 20px;
+  width: 100%;
+}
+
+.boxcontent form {
+  margin-top: 10px;
+}
+
+.boxcontent form input[type="text"],
+.boxcontent form input[type="password"],
+.boxcontent form input[type="checkbox"],
+.boxcontent form input[type="submit"] {
+  margin-bottom: 10px;
+}
+
+.formtaikhoan input[type="text"],
+.formtaikhoan input[type="password"] {
+  width: 100%;
+  border: 1px #ccc solid;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.formtaikhoan input[type="submit"] {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px #ccc solid;
+}
+
+.formtaikhoan input[type="submit"]:hover {
+  background-color: #ccc;
+}
+
+.formtaikhoan li a {
+  color: teal;
+  text-decoration: none;
+}
+
+.formtaikhoan li a:hover {
+  color: rgb(236, 227, 227);
+  text-decoration: underline;
+}
+
+.menudoc ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.menudoc ul li {
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 1px #ccc solid;
+}
+
+.menudoc ul li a {
+  color: #666;
+  text-decoration: none;
+}
+
+.menudoc ul li:hover {
+  background-color: #ccc;
+}
+/* Sản phẩm yêu thích */
+.like {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.product-card {
+  width: calc(25% - 30px);
+  margin: 0 15px;
+  margin-bottom: 32px;
+  box-shadow: 0px 2px 1.5px 0px #ccc;
+  border-top: 1px solid #f1f1f1;
+  position: relative;
+  cursor: pointer;
+  margin-top: 20px;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+.product-card .product-img_container{
+  overflow: hidden;
+}
+.product-card .product-img_container .product-img{
+  width: 100%;
+}
+.product-card img {
+  width: 100%;
+  transition: transform 0.2s ease;
+}
+.product-card .product-img_container:hover img{
+  transform: scale(1.1);
+}
+.product-content {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 42px;
+}
+.main_container .product-title {
+  width: 100%;
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 8px;
+}
+.main_container .product-title a {
+  text-decoration: none;
+  color: #212529;
+}
+.main_container .product-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main_container .product-price * {
+  font-family: Muli;
+  font-size: 16px;
+  font-weight: 700;
+  color: #8a733f;
+  text-align: center;
+  margin-top: 24px;
+}
+.product-listed-price {
+  margin-left: 8px;
+  color: #bebebe !important;
+  transform: scale(0.9, 0.9);
+  text-decoration: line-through;
+}
+.product-button button {
+  border: 1px solid #d3b673;
+  color: #fff;
+  background: #d3b673;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: Muli;
+  display: inline-block;
+  padding: 2px 16px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+.product-button button:hover {
+  background: transparent;
+  color: #d3b673;
+}
+/* Sản phẩm nổi bật */
+.noibat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.noibat img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.anh_gioithieu {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.anh_gioithieu:hover {
+  transform: scale(0.9);
+}
+
+.hehe {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+/* slide show */
+* {
+  box-sizing: border-box;
+}
+
+.slideshow-container {
+  width: 1370px;
+  position: relative;
+  margin: auto;
+  margin-left: px;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* End slide show */
+
+.boxcontent1 {
+  border-left: 1px #ccc solid;
+  border-bottom: 1px #ccc solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  min-height: 200px;
+  padding: 20px;
+  flex: 1;
+}
+
+.formtaikhoan input[type="text"],
+.formtaikhoan input[type="password"] {
+  margin-bottom: 8px;
+  padding: 8px;
+}
+
+.formtaikhoan input[type="text"],
+.formtaikhoan input[type="password"] {
+  width: 80%;
+  max-width: 400px;
+  border: 1px #ccc solid;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.dangki_container {
+  display: flex;
+}
+
+.anh_dangki {
+  border-right: 1px #ccc solid;
+  border-bottom: 1px #ccc solid;
+}
+
+.anh_dangki img {
+  width: 800px;
+  height: 350px;
+  margin: 25px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.dangki_anh:hover {
+  transform: scale(1.1);
+}
+
+.row {
+  float: left;
+  width: 100%;
+}
+
+.mb {
+  margin-bottom: 20px;
+}
+
+.boxchitiet {
+  width: 100;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mr {
+  margin-right: 2%;
+}
