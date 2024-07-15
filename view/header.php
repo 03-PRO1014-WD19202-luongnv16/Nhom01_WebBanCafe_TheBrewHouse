@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Brew House</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="stylee.css">
 </head>
 <body>
@@ -38,22 +42,21 @@
             </div>
             <div class="header_menu2">
                 <ul>
-                    
                     <li><a href="index.php?act=lienhe"><h4>Liên Hệ</h4></a></li>
                     <li><a href="index.php?act=gioithieu"><h4>Giới Thiệu</h4></a></li>
+                    <li><a href="index.php?act=viewCart"><h4>Giỏ Hàng</h4></a></li>
                     <li class="dropdown" onmouseover="showDropdown()" onmouseout="hideDropdown()">
                         <?php if(isset($_SESSION['user'])):
                                 extract($_SESSION['user']);    
-                        ?>
+                                ?>
                             <a href="#"><h4> <?=$user ?></h4></a>
                             <div class="dropdown-content" id="dropdownContent">
                                 <a href="index.php?act=dangky">Đăng Ký</a>
-                                <a href="#"><h4>Giỏ Hàng</h4></a>
                                 <a href="index.php?act=thoat"><h4>Đăng Xuất</h4></a>
                             </div>
                             <li></li>
-                           <p style="color:red";>XIN CHÀO!</p>
-                            </div>
+                            <span style="color:red";>XIN CHÀO!</span>
+                        </div>
                         <?php else: ?>
                             <a href="#"><h4>Tài khoản</h4></a>
                             <div class="dropdown-content" id="dropdownContent">
@@ -62,6 +65,6 @@
                             </div>
                         <?php endif; ?>
                     </li>
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>

@@ -51,7 +51,15 @@
                                     <div class="product-listed-price">'.$listed_price.'đ</div>
                                 </div>
                                 <div class="product-button">
-                                    <a href="#"><button>Đặt ngay</button></a>
+                                    <form action="index.php?act=addToCart" method="post">
+                                        <input type="hidden" name="id" value="'.$id.'">
+                                        <input type="hidden" name="name" value="'.$name.'">
+                                        <input type="hidden" name="img" value="'.$img.'">
+                                        <input type="hidden" name="sale_price" value="'.$sale_price.'">
+                                        <input type="hidden" name="listed_price" value="'.$listed_price.'">
+                                        <input type="submit" name="addToCart" value="Thêm vào giỏ">
+                                        <a href="#"><button>Mua ngay</button></a>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +93,15 @@
                                     <div class="product-listed-price">'.$listed_price.'đ</div>
                                 </div>
                                 <div class="product-button">
-                                    <a href="#"><button>Đặt ngay</button></a>
+                                    <form action="index.php?act=addToCart" method="post">
+                                        <input type="hidden" name="id" value="'.$id.'">
+                                        <input type="hidden" name="name" value="'.$name.'">
+                                        <input type="hidden" name="img" value="'.$img.'">
+                                        <input type="hidden" name="sale_price" value="'.$sale_price.'">
+                                        <input type="hidden" name="listed_price" value="'.$listed_price.'">
+                                        <input type="submit" name="addToCart" value="Thêm vào giỏ">
+                                        <a href="#"><button>Mua ngay</button></a>
+                                    </form>
                                 </div>
                             </div>
                         </div>
