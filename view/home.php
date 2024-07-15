@@ -1,4 +1,11 @@
 <div class="main_container">
+    <br>
+<form style="text-align: right;" action="index.php?act=sanpham" method="POST" >
+    <input style = "width: 250px; height: 30px" type="text" name="kyw">
+    <input style = "width: 100px; height: 30px" type="submit" name="timkiem" value="TÌM KIẾM" style="margin-left: 10px;">
+</form>
+
+
             <!-- Danh mục Slideshow Tài khoản -->
             <div class="main_danhmuc_slideshow_taikhoan">
                 <!-- Slideshow -->

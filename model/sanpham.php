@@ -33,6 +33,28 @@ function loadone_sanpham($id){
   $sp=pdo_query_one($sql);
   return $sp;
 }
+function loadone_ten_dm($iddm){
+  if($iddm>0){
+  $sql="select * from danhmuc where id=".$iddm;
+  $dm=pdo_query_one($sql);
+  extract($dm);
+  return $name;
+  }else{
+      return "";
+  }
+}
+function loadall_sanpham_dm_search($kyw="", $iddm=0){
+  $sql="select * from sanpham where 1";
+  if($kyw!=""){
+      $sql.=" and name like '%".$kyw."%'";
+  }
+  if($iddm>0){
+      $sql.=" and iddm ='".$iddm."'";
+  }
+  $sql.=" order by id desc";
+  $listsanpham=pdo_query($sql);
+  return $listsanpham;
+}
   function update_sanpham($id,$name,$mota,$img,$import_price,$sale_price,$listed_price,$stock,$iddm){
     if($img!=""){
       $sql = "UPDATE sanpham SET name='$name',mota='$mota',img='$img',import_price='$import_price',sale_price='$sale_price',listed_price='$listed_price',stock='$stock',iddm='$iddm' WHERE id=".$id;
