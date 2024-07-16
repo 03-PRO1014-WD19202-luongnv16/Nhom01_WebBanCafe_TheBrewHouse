@@ -16,15 +16,31 @@
                 
             </div>
 
-            <div class="like">
-                <div class="boxtitle"><h4>Bình luận</h4></div>
-                <div class="like">
-                   
-                </div>
-            </div>
 
-        </div>
 
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                $("#binhluan").load("view/binhluan/binhluanform.php", {idpro: <?=$id?>});
+                });
+            </script>
+
+
+<div class="like" id="binhluan">
+</div> 
+
+
+
+
+
+</div>
+
+
+
+
+
+        
 
 
 
