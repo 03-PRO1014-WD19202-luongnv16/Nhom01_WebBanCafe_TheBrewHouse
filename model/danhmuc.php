@@ -1,7 +1,8 @@
 <?php
   function loadAll_danhmuc(){
-    $sql = "select * from danhmuc";
-    return pdo_query($sql);
+    $sql = "select * from danhmuc order by id asc";
+    $listdanhmuc = pdo_query($sql);
+    return $listdanhmuc;
   }
   function insert_danhmuc($name){
     $sql = "INSERT INTO danhmuc (name) VALUES ('$name')";

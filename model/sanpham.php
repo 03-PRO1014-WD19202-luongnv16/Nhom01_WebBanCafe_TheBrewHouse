@@ -4,8 +4,23 @@ function insert_sanpham($name,$mota,$img,$import_price,$sale_price,$listed_price
   pdo_execute($sql);
 }
   function loadAll_sanpham(){
-    $sql = "SELECT sanpham.*, danhmuc.name FROM sanpham inner join danhmuc on sanpham.iddm = danhmuc.id order by sanpham.id desc";
+    $sql = "SELECT * from sanpham order by id desc";
     $listsanpham=pdo_query($sql);
+    return $listsanpham;
+  }
+  function loadAll_sanpham_yeuthich(){
+    $sql = "SELECT * FROM sanpham where 1 order by stock desc limit 4"; 
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+  }
+  function loadAll_sanpham_new(){
+    $sql = "SELECT * FROM sanpham order by id desc limit 0,8"; 
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+  }
+  function loadall_sanpham_dm($iddm) {
+    $sql = "SELECT * FROM sanpham WHERE iddm = $iddm ORDER BY id DESC";
+    $listsanpham = pdo_query($sql);
     return $listsanpham;
   }
   function delete_sanpham($id){

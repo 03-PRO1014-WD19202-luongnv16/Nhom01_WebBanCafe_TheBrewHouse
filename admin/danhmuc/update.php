@@ -25,12 +25,12 @@
         <div class="card">
           <div class="card-body">
             <form action="index.php?act=updatedm" method="post">
-              <div class="mb-4">
+              <!-- <div class="mb-4">
                 <h5 class="mb-3">Mã loại hàng</h5>
                 <input type="text" name="" id="" class="form-control" disabled>
-              </div>
+              </div> -->
               <div class="mb-4 dm">
-                <h5 class="mb-3">Danh mục loại hàng</h5>
+                <h5 class="mb-3">Tên loại hàng</h5>
                 <input class="form-control" type="text" name="name" id="" value ="<?php if(isset($name)&&($name!="")) echo $name;?>" />
               </div>
               <div class="mb-4">

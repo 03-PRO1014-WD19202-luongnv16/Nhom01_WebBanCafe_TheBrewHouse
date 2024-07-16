@@ -18,15 +18,15 @@
             </div>
           </div>
           <div class="col-auto">
-            <select name="" id="">
-              <option value="0" selected>Tất cả</option>
-              <option value="1">Cà Phê</option>
-              <option value="2">Trà Sữa</option>
-              <option value="3">Đá Xay</option>
-              <option value="4">Nước Ép</option>
-              <option value="5">Nước Ngọt</option>
-              <option value="6">Bánh Ngọt</option>
-            </select>
+          <select name="iddm" id="">
+                  <option value="" selected> Tất cả </option>
+                <?php 
+                  foreach($listdanhmuc as $danhmuc){
+                    extract($danhmuc);
+                    echo '<option value="'.$id.'">'.$name.'</option>';
+                  }
+                ?>
+              </select>
           </div>
           <div class="col-auto">
             <div class="btn">
