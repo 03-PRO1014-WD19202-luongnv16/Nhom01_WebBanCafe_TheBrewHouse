@@ -20,13 +20,13 @@
         <div class="card">
           <div class="card-body">
             <form action="index.php?act=adddm" method="post">
-              <div class="mb-4">
+              <!-- <div class="mb-4">
                 <h5 class="mb-3">Mã loại hàng</h5>
                 <input type="text" name="" id="" class="form-control" disabled>
-              </div>
+              </div> -->
               <div class="mb-4 dm">
-                <h5 class="mb-3">Danh mục loại hàng</h5>
-                <input type="text" name="name" id="" class="form-control" placeholder="Nhập tên danh mục...">
+                <h5 class="mb-3">Tên loại hàng</h5>
+                <input type="text" name="name" id="" class="form-control" placeholder="Nhập tên loại hàng...">
               </div>
               <div class="mb-4">
                 <input type="submit" value="Lưu lại" name="luulai" class="success">

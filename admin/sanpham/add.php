@@ -22,8 +22,7 @@
            <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
             <div class="mb-4 dm">
                 <h5 class="mb-3">Danh mục sản phẩm</h5>
-                <!-- sửa được ở đây -->
-                <select name="iddm" id=""> 
+                <select name="iddm" id="">
                   <option value="" selected> Tất cả </option>
                 <?php 
                   foreach($listdanhmuc as $danhmuc){
@@ -32,7 +31,6 @@
                   }
                 ?>
               </select>
-                <option value="" selected> Tất cả </option>
               </div>
               <div class="mb-4">
                 <h5 class="mb-3">Tên sản phẩm</h5>
