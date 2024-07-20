@@ -18,19 +18,19 @@
                       ?>
                       <tr>
                         <td>Người đặt hàng</td>
-                        <td><input type="text" value="<?=$user?>"></td>
+                        <td><input type="text" name="user" value="<?=$user?>"></td>
                       </tr>  
                       <tr>
                         <td>Địa chỉ</td>
-                        <td><input type="text" value="<?=$address?>"></td>
+                        <td><input type="text" name="address" value="<?=$address?>"></td>
                       </tr>  
                       <tr>
                         <td>Email</td>
-                        <td><input type="text" value="<?=$email?>"></td>
+                        <td><input type="text" name="email" value="<?=$email?>"></td>
                       </tr>  
                       <tr>
                         <td>SDT</td>
-                        <td><input type="text" value="<?=$tel?>"></td>
+                        <td><input type="text"  name="phone_number" value="<?=$tel?>"></td>
                       </tr>
                     </table>
                 </div>
@@ -38,8 +38,8 @@
                 <div class="boxtitle"><h4>PHƯƠNG THỨC THANH TOÁN</h4></div>
                     <table>
                       <tr>
-                        <td><input type="radio" name="pttt" checked> Trả tiền khi nhận hàng</td>
-                        <td><input type="radio" name="pttt" > Thanh toán online</td>
+                        <td><input type="radio" name="bill_payment_status" checked> Trả tiền khi nhận hàng</td>
+                        <td><input type="radio" name="bill_payment_status" > Thanh toán online</td>
                       </tr>
                     </table>
                 </div>
@@ -51,7 +51,7 @@
                       ?>
                     </table>
                     <div class="bill">
-                      <a href="index.php?act=billcomfirm"><input type="button" value="ĐỒNG Ý ĐẶT HÀNG" name="dongydathang"></a>
+                      <a href="index.php?act=billcomfirm"><input type="submit" value="ĐỒNG Ý ĐẶT HÀNG" name="dongydathang"></a>
                     </div>
                 </div>
                 

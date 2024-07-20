@@ -63,7 +63,6 @@
                                         <input type="hidden" name="listed_price" value="'.$listed_price.'">
                                         <input type="submit" name="addToCart" value="Thêm vào giỏ">
                                         </form>
-                                        <a href="#"><button>Mua ngay</button></a>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +104,7 @@
                                         <input type="hidden" name="listed_price" value="'.$listed_price.'">
                                         <input type="submit" name="addToCart" value="Thêm vào giỏ">
                                     </form>
-                                        <a href="#"><button>Mua ngay</button></a>
+
                                 </div>
                             </div>
                         </div>

@@ -22,19 +22,20 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
                 $user = $_POST['user'];
                 $email = $_POST['email'];
                 $address = $_POST['address'];
-                $tel = $_POST['tel'];
-                $bill_payment_status = $_POST['bill$bill_payment_status'];
+                $tel = $_POST['phone_number'];
+                $pttt = $_POST['bill_payment_status'];
                 $ngaydathang=date('h:i:sa d/m/Y');
                 $tongdonhang=tongdonhang();
 
-                $idbill=insert_bill($user, $email, $address, $tel, $bill_payment_status, $ngaydathang, $tongdonhang);
-
+                $bill_id = insert_bill($user, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang);
                 // insert into cart :$session['myCart] & idbill
                 foreach ($_SESSION['myCart'] as $cart){
-                    insert_cart($_SESSION['user']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
+                    insert_cart($_SESSION['user']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$bill_id);
                 }
+                $_SESSION['myCart']=[];
             }
-            $listbill=loadOne_bill($idbill);
+            $bill=loadOne_bill($bill_id);
+            $cart=loadOne_cart($bill_id);
             include 'view/cart/billcomfirm.php';
             break;
         case 'bill':
@@ -175,8 +176,10 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
             if(isset($_POST['dangky'])) { 
                 $email = $_POST['email'];
                 $user = $_POST['user'];
-                $pass = $_POST['pass'];                   
-                insert_taikhoan($email, $user, $pass); 
+                $pass = $_POST['pass'];      
+                $tel = $_POST['tel'];      
+                $address = $_POST['address'];                   
+                insert_taikhoan($email, $user, $pass, $tel, $address); 
             }
             include "view/taikhoan/dangky.php";
             break;

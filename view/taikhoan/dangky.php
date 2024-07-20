@@ -25,6 +25,16 @@
         <input type="text" name="email">
         </div>
     
+        <div class="row ">
+           Số điện thoại <br>
+        <input type="text" name="tel">
+        </div>
+
+        <div class="row ">
+           Địa chỉ <br>
+        <input type="text" name="address">
+        </div>
+
         <div class="row">
         <input type="submit" value="Đăng kí" name="dangky">
         </div> 

@@ -71,22 +71,26 @@ function tongdonhang(){
     }
     return $tong;
 }
-function insert_bill($user, $email, $address, $tel, $bill_payment_status, $ngaydathang, $tongdonhang) {
+function insert_bill($user, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang) {
   // Tạo câu lệnh SQL
-  $sql = "INSERT INTO bill (full_name, email, address, phone_number, bill_payment_status, ngaydathang, total_price) 
-          VALUES ('$user', '$email', '$address', '$tel', '$bill_payment_status', '$ngaydathang', '$tongdonhang')";
-  // Thực thi câu lệnh SQL
+  $sql = " INSERT INTO bill(full_name, email, phone_number, address, ngaydathang, bill_payment_status, total_price) VALUES('$user', '$email', '$address', '$tel', '$pttt', '$ngaydathang', '$tongdonhang' ) ";
+  // Thực thi câu lệnh SQL trả id mới khi vừa mới insert
   return pdo_execute_return_lastInsertID($sql);
 }
 function insert_cart($user_id, $product_id, $img, $name, $price, $soluong, $thanhtien,$idbill) {
   // Tạo câu lệnh SQL
-  $sql = "INSERT INTO bill (user_id, product_id, img, name, price, soluong, thanhtien,idbill)
+  $sql = "INSERT INTO cart (user_id, product_id, img, name, price, soluong, thanhtien,idbill)
           VALUES ('$user_id', '$product_id', '$img', '$name', '$price', '$soluong', '$thanhtien','$idbill')";
   // Thực thi câu lệnh SQL
   return pdo_execute($sql);
 }
-function loadOne_bill($bill_id){
-  $sql="SELECT * FROM bill WHERE bill_id = $bill_id";
+function loadOne_bill($bill_id) {
+  $sql = "SELECT * FROM bill WHERE bill_id=".$bill_id;
+  $bill = pdo_query_one($sql);
+  return $bill;
+}
+function loadOne_cart($bill_id){
+  $sql="SELECT * FROM cart WHERE idbill = $bill_id ";
   $bill=pdo_query_one($sql);
   return $bill;
 }
