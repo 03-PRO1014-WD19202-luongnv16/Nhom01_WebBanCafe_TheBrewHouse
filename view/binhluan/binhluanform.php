@@ -55,7 +55,7 @@ $dsbl=loadall_binhluan($idpro);
 
                         <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">
                             <input type="hidden" name="idpro" value="<?=$idpro?>">
-                            <input type="text" name="noidung">
+                            <input type="text"  name="noidung"> <br>
                             <input type="submit" name="guibinhluan" value="Gửi bình luận">
                         </form>
                     </div>

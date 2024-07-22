@@ -16,9 +16,10 @@ if(!isset($_SESSION['myCart'])) $_SESSION['myCart']=[];
 if(isset($_GET['act']) && $_GET['act'] !== "") {
     $act = $_GET['act'];
     switch ($act) {
-        // đang lỗi
         case 'billcomfirm':
             if(isset($_POST['dongydathang'])&&$_POST['dongydathang']){
+                if(isset($_SESSION['user'])) $user_id=$_SESSION['user']['id'];
+                else $id=0;
                 $user = $_POST['user'];
                 $email = $_POST['email'];
                 $address = $_POST['address'];
@@ -27,7 +28,7 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
                 $ngaydathang=date('h:i:sa d/m/Y');
                 $tongdonhang=tongdonhang();
 
-                $bill_id = insert_bill($user, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang);
+                $bill_id = insert_bill($user_id,$user, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang);
                 // insert into cart :$session['myCart] & idbill
                 foreach ($_SESSION['myCart'] as $cart){
                     insert_cart($_SESSION['user']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$bill_id);
@@ -37,6 +38,10 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
             $bill=loadOne_bill($bill_id);
             $cart=loadOne_cart($bill_id);
             include 'view/cart/billcomfirm.php';
+            break;
+        case 'mybill':
+            $listbill=loadall_bill($_SESSION['user']['id']);
+            include 'view/cart/mybill.php';
             break;
         case 'bill':
             include 'view/cart/bill.php';

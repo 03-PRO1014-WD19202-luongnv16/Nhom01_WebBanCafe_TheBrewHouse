@@ -61,17 +61,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="quantity">
-                            <span style="font-weight: bold; font-size: 20px; margin-right: 10px;">Số lượng: </span>
-                            <a href="#">
-                                <i class="bi bi-dash"></i> 
-                            </a>    
-                            <input type="number" value="1">
-
-                            <a href="#">
-                                <i class="bi bi-plus"></i>
-                            </a>
-                        </div>
+                        <br>
                         <div class="mota">
                             <span>Mô tả sản phẩm</span>
                             <p>'.$mota.'</p>

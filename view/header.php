@@ -42,7 +42,6 @@
             </div>
             <div class="header_menu2">
                 <ul>
-                    <li><a href="index.php?act=lienhe"><h4>Liên Hệ</h4></a></li>
                     <li><a href="index.php?act=gioithieu"><h4>Giới Thiệu</h4></a></li>
                     <li><a href="index.php?act=viewCart"><h4>Giỏ Hàng</h4></a></li>
                     <li class="dropdown" onmouseover="showDropdown()" onmouseout="hideDropdown()">
@@ -52,6 +51,7 @@
                             <a href="#"><h4> <?=$user ?></h4></a>
                             <div class="dropdown-content" id="dropdownContent">
                                 <a href="index.php?act=edit_taikhoan"><h4>Cập nhật tài khoản</h4></a>
+                                <a href="index.php?act=mybill">Đơn hàng của tôi</a>
                                 <a href="admin/index.php">Đăng nhập admin</a>
                                 <a href="index.php?act=dangky">Đăng Ký</a>
                                 <a href="index.php?act=thoat"><h4>Đăng Xuất</h4></a>

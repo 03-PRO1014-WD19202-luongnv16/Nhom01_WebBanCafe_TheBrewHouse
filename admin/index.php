@@ -5,6 +5,7 @@
   include '../model/sanpham.php';
   include '../model/danhmuc.php';
   include '../model/pdo.php';
+  include '../model/cart.php';
 
   // controller
   if(isset($_GET['act'])){
@@ -116,8 +117,9 @@
         include './sanpham/list.php';
         break;
       //Giỏ hàng  
-      case 'listdh':
-        include './donhang/list.php';
+      case 'listbill':
+        $listbill=loadall_bill(0);
+        include './bill/listbill.php';
         break;
       case 'updatedh':
         include './donhang/update.php';

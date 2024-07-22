@@ -71,9 +71,9 @@ function tongdonhang(){
     }
     return $tong;
 }
-function insert_bill($user, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang) {
+function insert_bill($user_id,$user, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang) {
   // Tạo câu lệnh SQL
-  $sql = " INSERT INTO bill(full_name, email, phone_number, address, ngaydathang, bill_payment_status, total_price) VALUES('$user', '$email', '$address', '$tel', '$pttt', '$ngaydathang', '$tongdonhang' ) ";
+  $sql = " INSERT INTO bill(user_id,full_name, email, phone_number, address, ngaydathang, bill_payment_status, total_price) VALUES('$user_id','$user', '$email', '$address', '$tel', '$pttt', '$ngaydathang', '$tongdonhang' ) ";
   // Thực thi câu lệnh SQL trả id mới khi vừa mới insert
   return pdo_execute_return_lastInsertID($sql);
 }
@@ -93,5 +93,33 @@ function loadOne_cart($bill_id){
   $sql="SELECT * FROM cart WHERE idbill = $bill_id ";
   $bill=pdo_query_one($sql);
   return $bill;
+}
+function loadall_bill($user_id){
+  $sql="select * from bill where 1";
+  if($user_id>0) $sql.=" AND user_id=".$user_id;
+  $sql.=" order by bill_id desc";
+  $listbill=pdo_query($sql);
+  return $listbill;
+}
+
+function get_ttdh($n){
+  switch ($n){
+    case '1':
+      $tt="Đơn hàng mới";
+      break;
+      case '2':
+        $tt="Đang xử lý";
+        break;
+        case '3':
+          $tt="Đang giao hàng";
+          break;
+          case '4':
+            $tt="Hoàn tất";
+            break;
+            default:
+            $tt="Đơn hàng mới";
+            break;
+  }
+  return $tt;
 }
 ?>

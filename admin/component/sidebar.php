@@ -22,7 +22,7 @@
                     </li>
                     <li class="menu-label">Quản lý</li>
                     <li>
-                      <a href="#" class="has-arrow">
+                      <a href="index.php?act=dskh" class="has-arrow">
                         <div class="child-icon">
                           <i class="bi bi-people"></i>
                         </div>
@@ -46,7 +46,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="index.php?act=listdh" class="has-arrow">
+                      <a href="index.php?act=listbill" class="has-arrow">
                         <div class="child-icon">
                         <i class="bi bi-cart3"></i>
                         </div>
