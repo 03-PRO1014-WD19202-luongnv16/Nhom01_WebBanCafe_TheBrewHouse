@@ -1,6 +1,6 @@
 <?php
   function viewCart($del){
-    global $img_path;
+    global $img_path; 
     $tong = 0;
       $i = 0;
       if($del==1){
@@ -100,6 +100,11 @@ function loadall_bill($user_id){
   $sql.=" order by bill_id desc";
   $listbill=pdo_query($sql);
   return $listbill;
+}
+function loadall_cart() {
+  $sql = "SELECT * FROM cart WHERE 1";
+  $listcart = pdo_query($sql); 
+  return $listcart;
 }
 
 function get_ttdh($n){

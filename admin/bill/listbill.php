@@ -30,7 +30,7 @@
                       <th>Địa chỉ</th>
                       <th>Số điện thoại</th>
                       <th>Ngày đặt hàng</th>
-                      <th>Tình trạng đơn hàng</th>
+                      <th>Giá</th>
                       <th>Tình trạng đơn</th>
                       <th>Thao tác</th>
                     </tr>
@@ -51,7 +51,11 @@
                                         <td>'.$bill['bill_payment_status'].'</td>
                                         <td>'.$bill['total_price'].'.000đ</td>
                                         <td>'.$ttdh.'</td>
-                                        <td>Sửa</td>
+                                        <td>
+                                          <a href="index.php?act=updatedh" class="sua">
+                                          <i class="bi bi-pencil-square"></i>
+                                          </a>
+                                        </td>
                                       </tr>';
                             }
                             

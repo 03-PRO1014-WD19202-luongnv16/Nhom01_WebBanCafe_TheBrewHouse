@@ -53,7 +53,6 @@
                                 <a href="index.php?act=edit_taikhoan"><h4>Cập nhật tài khoản</h4></a>
                                 <a href="index.php?act=mybill">Đơn hàng của tôi</a>
                                 <a href="admin/index.php">Đăng nhập admin</a>
-                                <a href="index.php?act=dangky">Đăng Ký</a>
                                 <a href="index.php?act=thoat"><h4>Đăng Xuất</h4></a>
                             </div>
                             <li></li>
