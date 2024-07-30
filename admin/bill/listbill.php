@@ -39,6 +39,7 @@
                     <tr>
                         <?php
                             foreach($listbill as $bill){
+                              extract($bill);
                                 $ttdh = get_ttdh($bill["bill_status"]);
                                 echo '<tr>
                                         <td></td>

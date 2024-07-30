@@ -116,17 +116,15 @@
         $listsanpham = loadAll_sanpham();
         include './sanpham/list.php';
         break;
-      //Giỏ hàng  
       case 'listbill':
         $listbill=loadall_bill(0);
         include './bill/listbill.php';
         break;
-      // index.php
       case 'updatedh':
         $listcart =  loadall_cart(0);
-        include './bill/updatebill.php';
+        include './bill/listsanpham.php';
         break;
-
+      
       default:
         include './component/home.php';
         break;

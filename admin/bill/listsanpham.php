@@ -42,9 +42,9 @@
                                     <td>' . $cart['product_id'] . '</td>
                                     <td>' . $cart['name'] . '</td>
                                     <td>' . $imgTag . '</td>
-                                    <td>' . number_format($cart['price'], 0, '', '.') . '.000đ</td>
+                                    <td>' . $cart['price'] . '.000đ</td>
                                     <td>' . $cart['soluong'] . '</td>
-                                    <td>' . number_format($thanhtien, 0, '', '.') . '.000đ</td>
+                                    <td>' . $thanhtien . '.000đ</td>
                                     <td></td>
                                   </tr>';
                         } else {
@@ -66,12 +66,13 @@
           </div>
         </div>
         <div class="mb-4">
+          CẬP NHẬT TÌNH TRẠNG ĐƠN HÀNG
           <select name="" id="" class="tinh_trang">
             <option value="" selected>__Chọn__</option>
-            <option value="">Chưa xử lý</option>
-            <option value="">Đã xử lý</option>
-            <option value="">Đã giao</option>
-            <option value="">Hủy đơn</option>
+            <option value="">Đơn hàng mới</option>
+            <option value="">Đang xử lý</option>
+            <option value="">Đang giao hàng</option>
+            <option value="">Đã giao hàng</option>
           </select>
           <button name="capnhatbill" class="success">Cập nhật</button>
           <a href="index.php?act=listbill"><button class="danger">Trở về</button></a>

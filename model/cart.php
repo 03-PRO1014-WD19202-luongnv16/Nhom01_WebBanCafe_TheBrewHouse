@@ -109,17 +109,17 @@ function loadall_cart() {
 
 function get_ttdh($n){
   switch ($n){
-    case '1':
+    case '0':
       $tt="Đơn hàng mới";
       break;
-      case '2':
+      case '1':
         $tt="Đang xử lý";
         break;
-        case '3':
+        case '2':
           $tt="Đang giao hàng";
           break;
-          case '4':
-            $tt="Hoàn tất";
+          case '3':
+            $tt="Đã giao hàng";
             break;
             default:
             $tt="Đơn hàng mới";
