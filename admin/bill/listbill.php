@@ -40,10 +40,10 @@
                         <?php
                             foreach($listbill as $bill){
                               extract($bill);
-                              $ttdh = get_ttdh($bill["bill_status"]); // Chuyển đổi số thành chữ
-                              $bill_payment_status = get_pttt($bill["bill_payment_status"]); // Chuyển đổi phương thức thanh toán
+                              $ttdh = get_ttdh($bill["bill_status"]); 
+                              $bill_payment_status = get_pttt($bill["bill_payment_status"]); 
                               $suabill = "index.php?act=suabill&bill_id=".$bill_id;
-                              $ngaydathang = date('h:i:sa d/m/Y', strtotime($bill['ngaydathang'])); // Định dạng ngày giờ cho rõ ràng
+                              $ngaydathang = date('h:i:sa d/m/Y', strtotime($bill['ngaydathang'])); 
                               echo '<tr>
                                       <td>TBRH_VN'.$bill['bill_id'].'</td>
                                       <td>TBRH_VN'.$bill['user_id'].'TBRH_VN</td>

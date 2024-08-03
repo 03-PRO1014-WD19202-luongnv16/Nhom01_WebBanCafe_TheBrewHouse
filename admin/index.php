@@ -5,6 +5,7 @@
   include '../model/danhmuc.php';
   include '../model/pdo.php';
   include '../model/cart.php';
+  include '../model/khachhang.php';
 
   // controller
   if(isset($_GET['act'])){
@@ -122,12 +123,14 @@
         $listsanpham = loadAll_sanpham();
         include './sanpham/list.php';
         break;
-      //Giỏ hàng  
       case 'listbill':
         $listbill=loadall_bill(0);
         include './bill/listbill.php';
         break;
-      // index.php
+      case 'dskh':
+        $listkh = loadall_taikhoan(0);
+        include './khachhang/listkh.php';
+        break;
       case 'suabill':
         if(isset($_GET['bill_id'])&&$_GET['bill_id']>0){
           $listcart = loadall_cart($_GET['bill_id']);

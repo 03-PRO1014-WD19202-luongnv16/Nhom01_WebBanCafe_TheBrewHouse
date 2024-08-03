@@ -108,18 +108,19 @@ function loadall_bill($user_id){
 }
 function loadall_cart($bill_id) {
   $sql = "SELECT * FROM cart WHERE idbill = $bill_id ";
-  $listcart = pdo_query($sql); // Thay vì pdo_query_one
+  $listcart = pdo_query($sql); 
   return $listcart;
 }
 
 function get_ttdh($n){
   switch ($n){
-      case '0': return "Chờ xác nhận";
-      case '1': return "Đã xác nhận";
-      case '2': return "Đang giao hàng";
-      case '3': return "Đã hủy";
-      case '4': return "Giao hàng thành công";
-      case '5': return "Giao hàng thất bại";
+      case '0': return "Chọn";
+      case '1': return "Chờ xác nhận";
+      case '2': return "Đã xác nhận";
+      case '3': return "Đang giao hàng";
+      case '4': return "Đã hủy";
+      case '5': return "Giao hàng thành công";
+      case '6': return "Giao hàng thất bại";
       default;
   }
   return "Chưa xác nhận";

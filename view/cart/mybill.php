@@ -12,21 +12,57 @@
                     <th>NGÀY ĐẶT HÀNG</th>
                     <th>TỔNG GIÁ TRỊ</th>
                     <th>TÌNH TRẠNG ĐƠN</th>
+                    <th>Hủy đơn hàng</th>
                 </tr>
-                <?php foreach ($listbill as $bill): ?>
-                      <tr>
-                        <td><?php echo 'TBRH_VN'.$bill['bill_id']; ?></td>
-                        <td><?php echo 'TBRH_VN_QRT'.$bill['user_id']; echo'TBRH_VN_QRT'?></td>
-                        <td><?php echo $bill['full_name']; ?></td>
-                        <td><?php echo $bill['address']; ?></td>
-                        <td><?php echo $bill['phone_number']; ?></td>
-                        <td><?php echo $bill['ngaydathang']; ?></td>
-                        <td><?php echo number_format($bill['total_price'], 0, ',', '.') . '.000đ'; ?></td>
-                        <td><?php echo get_ttdh($bill['bill_status']); ?></td>
-                      </tr>
-                <?php endforeach; ?>
+                <?php
+                            foreach($listbill as $bill){
+                              extract($bill);
+                              $ttdh = get_ttdh($bill["bill_status"]);
+                              $huy_don_hang = "index.php?act=huydonhang&bill_id=".$bill_id;
+                              echo '<tr>
+                                      <td>VN '.$bill['bill_id'].'</td>
+                                      <td>TBRH_VN '.$bill['user_id'].'</td>
+                                      <td>'.$bill['full_name'].'</td>
+                                      <td>'.$bill['phone_number'].'</td>
+                                      <td>'.$bill['address'].'</td>
+                                      <td>'.$bill['ngaydathang'].'</td>
+                                      <td>'.$bill['total_price'].'.000đ</td>
+                                      <td>'.$ttdh.'</td>
+                                      <td>
+                                        <a href="'.$huy_don_hang.'" class="sua">
+                                        <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                      </td>
+                                    </tr>';
+                          }
+                          
+                            
+                        ?>
 
                     </table>
                 </div>
   
 </div>
+
+
+
+
+<!-- <?php
+                            foreach($listbill as $bill){
+                              extract($bill);
+                              echo '<tr>
+                                      <td>'.$bill['bill_id'].'</td>
+                                      <td>'.$bill['user_id'].'</td>
+                                      <td>'.$bill['full_name'].'</td>
+                                      <td>'.$bill['email'].'</td>
+                                      <td>'.$bill['phone_number'].'</td>
+                                      <td>'.$bill['address'].'</td>
+                                      <td>'.$bill['ngaydathang'].'</td>
+                                      <td>'.$bill['bill_status'].'</td>
+                                    </tr>';
+                          }
+                          
+                            
+                        ?>  -->
+
+<!-- <td><?php echo get_ttdh($bill['bill_status']); ?></td> -->

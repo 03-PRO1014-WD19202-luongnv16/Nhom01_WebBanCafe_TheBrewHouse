@@ -2,12 +2,12 @@
 session_start();
 include "model/pdo.php";
 include "model/sanpham.php";
-include "model/danhmuc.php";
 include "model/taikhoan.php";
+include "model/danhmuc.php";
+$listdanhmuc = loadAll_danhmuc();
 include "./view/header.php";
 include "model/cart.php";
 include "global.php";
-$listdanhmuc = loadAll_danhmuc();
 $spnew = loadAll_sanpham_new();
 $spyeuthich = loadAll_sanpham_yeuthich();
 
@@ -43,6 +43,16 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
             $listbill=loadall_bill($_SESSION['user']['id']);
             include 'view/cart/mybill.php';
             break;
+        case 'huydonhang':
+                if (isset($_GET['bill_id']) && $_GET['bill_id'] > 0) {
+                    $bill_id = intval($_GET['bill_id']);
+                    $sql = "DELETE FROM bill WHERE bill_id = ?";
+                    pdo_execute($sql, $bill_id);
+                }
+                $listbill = loadall_bill($_SESSION['user']['id']);
+                include 'view/cart/mybill.php';
+                break;
+            
         case 'bill':
             include 'view/cart/bill.php';
             break;

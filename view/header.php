@@ -25,13 +25,6 @@
                                     }
                                     
                                  ?>
-                            <!-- <a href="#">Cà Phê</a>
-                            <a href="#">Trà Sữa</a>
-                            <a href="#">Trà Đào</a>
-                            <a href="#">Đá Xay</a>
-                            <a href="#">Nước Ép</a>
-                            <a href="#">Nước Ngọt</a>
-                            <a href="#">Bánh Ngọt</a> -->
                         </div>
                     </li>
                     <li><a href="index.php?act=chinhanh"><h4>Chi Nhánh</h4></a></li>

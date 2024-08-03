@@ -20,13 +20,13 @@
             <input type="text" name="" id=""  placeholder="Mã đặt hàng" value="TBRH_VN<?=$bill_id?>">
             <form action="index.php?act=updatebill" method="post">
             <select name="ttdh" id="" class="tinh_trang">
-                  <option>__Chọn__</option>
-                  <option value="0" <?php if(isset($ttdh) && $ttdh == "0") echo 'selected'; ?>>Chờ xác nhận</option>
-                  <option value="1" <?php if(isset($ttdh) && $ttdh == "1") echo 'selected'; ?>>Đã xác nhận</option>
-                  <option value="2" <?php if(isset($ttdh) && $ttdh == "2") echo 'selected'; ?>>Đang giao hàng</option>
-                  <option value="3" <?php if(isset($ttdh) && $ttdh == "3") echo 'selected'; ?>>Đã hủy</option>
-                  <option value="4" <?php if(isset($ttdh) && $ttdh == "4") echo 'selected'; ?>>Giao hàng thành công</option>
-                  <option value="5" <?php if(isset($ttdh) && $ttdh == "5") echo 'selected'; ?>>Giao hàng thất bại</option>
+                  <option value="0" <?php if(isset($ttdh) && $ttdh == "0") echo 'selected'; ?>>Chọn</option>
+                  <option value="1" <?php if(isset($ttdh) && $ttdh == "1") echo 'selected'; ?>>Chờ xác nhận</option>
+                  <option value="2" <?php if(isset($ttdh) && $ttdh == "2") echo 'selected'; ?>>Đã xác nhận</option>
+                  <option value="3" <?php if(isset($ttdh) && $ttdh == "3") echo 'selected'; ?>>Đang giao hàng</option>
+                  <option value="4" <?php if(isset($ttdh) && $ttdh == "4") echo 'selected'; ?>>Đã hủy</option>
+                  <option value="5" <?php if(isset($ttdh) && $ttdh == "5") echo 'selected'; ?>>Giao hàng thành công</option>
+                  <option value="6" <?php if(isset($ttdh) && $ttdh == "6") echo 'selected'; ?>>Giao hàng thất bại</option>
             </select>
             <input type="hidden" name="bill_id" value="<?php if(isset($bill_id) && $bill_id > 0) echo $bill_id; ?>">
             <br>
@@ -35,7 +35,7 @@
              </form>
             </div>
             <div class="content2">
-                  <input type="text" name="" id="" placeholder="Tên khách hàng" value="<?=$full_name?>">
+                      <input type="text" name="" id="" placeholder="Tên khách hàng" value="<?=$full_name?>">
                       <input type="text" name="" id="" placeholder="Số điện thoại" value="<?=$phone_number?>">
                       <input type="text" name="" id="" placeholder="Địa chỉ" value="<?=$address?>">
             </div>     
