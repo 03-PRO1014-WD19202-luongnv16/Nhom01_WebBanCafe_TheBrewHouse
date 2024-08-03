@@ -28,13 +28,19 @@
                 </div>
 
                 <input type="submit" value="Đăng Nhập" name="dangnhap">
-
-
+                
+                
+                <span></span>
             </form>
-            <br>
-            <li>
-                <a href="index.php?act=quenmk">Quên mật khẩu</a>
-            </li>
+            <?php if(isset($thongbao)&&($thongbao!="")) echo '<span style="color:red">'.$thongbao.'</span>' ;?>
+            <div class="box-bottom">
+                <li>
+                    <a href="index.php?act=quenmk">Quên mật khẩu</a>
+                </li>
+                <li>
+                <a href="index.php?act=dangky">Đăng ký</a>
+                </li>
+            </div>
             <?php }?>
         </div>
 

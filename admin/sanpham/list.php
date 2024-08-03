@@ -7,38 +7,43 @@
         </div>
         <!-- end breadcrumb -->
         <div class="filter">
+       <form action="index.php?act=listsp" method="post">
           <div class="col-auto">
-            <div class="search">
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Nhập sản phẩm cần tìm..."
-              />
-              <span><i class="bi bi-search"></i></span>
+                <div class="search">
+                  <input
+                    type="search"
+                    class="form-control"
+                    name="search"
+                    placeholder="Nhập sản phẩm cần tìm..."
+                  />
+                  <span>
+                  </span>
+                </div>
+                <select name="iddm" id="">
+                    <option value="" selected> Tất cả </option>
+                  <?php 
+                    foreach($listdanhmuc as $danhmuc){
+                      extract($danhmuc);
+                      echo '<option value="'.$id.'">'.$name.'</option>';
+                    }
+                  ?>
+                </select>
+                <input class="listOk" type="submit" name="listOK" value="Search">
+              </div>
+              
+            </form>
+            <div class="col-auto">
+              <div class="btn">
+                <a href="index.php?act=addsp">
+                  <button class="btn-primary">
+                    <i class="bi bi-plus-lg"></i>
+                    Thêm sản phẩm
+                  </button>
+                </a>
+              </div>
             </div>
+          
           </div>
-          <div class="col-auto">
-          <select name="iddm" id="">
-                  <option value="" selected> Tất cả </option>
-                <?php 
-                  foreach($listdanhmuc as $danhmuc){
-                    extract($danhmuc);
-                    echo '<option value="'.$id.'">'.$name.'</option>';
-                  }
-                ?>
-              </select>
-          </div>
-          <div class="col-auto">
-            <div class="btn">
-              <a href="index.php?act=addsp">
-                <button class="btn-primary">
-                  <i class="bi bi-plus-lg"></i>
-                  Thêm sản phẩm
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
         <div class="card">
           <div class="card-body">
             <div class="product-table">
@@ -75,7 +80,7 @@
                       <td>
                         <div class="product">
                           <div class="product-box">
-                            '.$img.'
+                            <a href="'.$suasp.'">'.$img.'</a>
                           </div>
                           <div class="product-info">
                             <a href="#" class="product-title"

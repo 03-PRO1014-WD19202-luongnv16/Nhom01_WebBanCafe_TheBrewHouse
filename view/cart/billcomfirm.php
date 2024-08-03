@@ -11,7 +11,7 @@
       <div class="boxtitle"><h4>THÔNG TIN ĐẶT HÀNG</h4></div>
       <div class="row" style="text-align: center">
         <h1>TBRH_VN : <?= $bill['bill_id']; ?></h1>
-        <h1>NGÀY ĐẶT HÀNG : <?= $bill['bill_payment_status']; ?></h1>
+        <h1>NGÀY ĐẶT HÀNG : <?= $bill['ngaydathang']; ?></h1>
       </div>
     </div>
 

@@ -1,11 +1,11 @@
 <?php
-
   include './component/header.php';
   include './component/sidebar.php';
   include '../model/sanpham.php';
   include '../model/danhmuc.php';
   include '../model/pdo.php';
   include '../model/cart.php';
+  include '../model/khachhang.php';
 
   // controller
   if(isset($_GET['act'])){
@@ -72,8 +72,15 @@
         include './sanpham/add.php';
         break;
       case 'listsp':
-        $listdanhmuc = loadAll_danhmuc();
-        $listsanpham = loadAll_sanpham();
+        if(isset($_POST['listOK'])&&($_POST['listOK'])){
+          $kyw=$_POST['search'];
+          $iddm=$_POST['iddm'];
+        }else{
+          $kyw='';
+          $iddm=0;
+        }
+        $listdanhmuc=loadAll_danhmuc();
+        $listsanpham=loadall_sanpham_dm_search($kyw,$iddm);
         include './sanpham/list.php';
         break;
       case 'suasp':
@@ -120,11 +127,36 @@
         $listbill=loadall_bill(0);
         include './bill/listbill.php';
         break;
-      case 'updatedh':
-        $listcart =  loadall_cart(0);
-        include './bill/listsanpham.php';
+      case 'dskh':
+        $listkhachhang=loadall_taikhoan();
+        include './khachhang/listkh.php';
         break;
-      
+      case 'suabill':
+        if(isset($_GET['bill_id'])&&$_GET['bill_id']>0){
+          $listcart = loadall_cart($_GET['bill_id']);
+          $sql="select * from bill where bill_id=".$_GET['bill_id'];
+          $bill=pdo_query_one($sql); 
+        }
+        include './bill/updatebill.php';
+        break;
+        case 'updatebill':
+          if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+              $ttdh = $_POST['ttdh'];
+              $bill_id = $_POST['bill_id'];
+              $sql = "UPDATE bill SET bill_status='" . $ttdh . "' WHERE bill_id=" . $bill_id;
+              pdo_execute($sql);
+              $listbill = loadall_bill(0);
+              include './bill/listbill.php';
+              exit(); 
+            }
+            $sql = "SELECT * FROM bill ORDER BY bill_id DESC";
+            $listbill = loadall_bill(0);
+          include './bill/listbill.php';
+          break;
+      case 'thoat':
+        session_unset();
+        header('Location: index.php');
+        break;
       default:
         include './component/home.php';
         break;

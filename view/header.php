@@ -25,6 +25,13 @@
                                     }
                                     
                                  ?>
+                            <!-- <a href="#">Cà Phê</a>
+                            <a href="#">Trà Sữa</a>
+                            <a href="#">Trà Đào</a>
+                            <a href="#">Đá Xay</a>
+                            <a href="#">Nước Ép</a>
+                            <a href="#">Nước Ngọt</a>
+                            <a href="#">Bánh Ngọt</a> -->
                         </div>
                     </li>
                     <li><a href="index.php?act=chinhanh"><h4>Chi Nhánh</h4></a></li>
@@ -45,7 +52,9 @@
                             <div class="dropdown-content" id="dropdownContent">
                                 <a href="index.php?act=edit_taikhoan"><h4>Cập nhật tài khoản</h4></a>
                                 <a href="index.php?act=mybill">Đơn hàng của tôi</a>
-                                <a href="admin/index.php">Đăng nhập admin</a>
+                                <?php if($role==1){?>
+                                    <a href="admin/index.php">Đăng nhập admin</a>
+                                <?php }?>
                                 <a href="index.php?act=thoat"><h4>Đăng Xuất</h4></a>
                             </div>
                             <li></li>

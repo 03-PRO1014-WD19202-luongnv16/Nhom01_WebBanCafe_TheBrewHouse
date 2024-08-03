@@ -2,12 +2,12 @@
 session_start();
 include "model/pdo.php";
 include "model/sanpham.php";
-include "model/danhmuc.php";
 include "model/taikhoan.php";
-include "model/cart.php";
-include "global.php";
+include "model/danhmuc.php";
 $listdanhmuc = loadAll_danhmuc();
 include "./view/header.php";
+include "model/cart.php";
+include "global.php";
 $spnew = loadAll_sanpham_new();
 $spyeuthich = loadAll_sanpham_yeuthich();
 
@@ -87,7 +87,6 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
             }
             break;
         case 'viewCart':
-           
             include "view/cart/viewcart.php";
             break;
         case 'delCart':
@@ -183,8 +182,13 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];      
                 $tel = $_POST['tel'];      
-                $address = $_POST['address'];                   
-                insert_taikhoan($email, $user, $pass, $tel, $address); 
+                $address = $_POST['address'];   
+                $checkdangki = checkdangki($user,$pass,$email,$address,$tel);
+                if(is_array($checkdangki)) {
+                    $_SESSION['user'] = $checkdangki;
+                    header('Location: dangnhap.php');
+                    exit;
+                }             
             }
             include "view/taikhoan/dangky.php";
             break;

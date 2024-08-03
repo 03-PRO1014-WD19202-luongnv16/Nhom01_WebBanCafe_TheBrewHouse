@@ -1,9 +1,15 @@
+<?php
+  session_start();
+  if(isset($_SESSION['user'])){
+      extract($_SESSION['user']);
+  }  
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_admin.css">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -16,8 +22,13 @@
       <nav class="navbar gap-4 navbar-expand">
         <ul class="nav-right-links">
           <li class="nav-item dropdown">
-            <a href="">
-              <img src="./images/01.png" alt="" width="45" height="45" />
+
+            <a href="#">
+              <span>
+                Xin chào,
+                <?=$user?>
+              </span>
+              <img src="./images/account.png" alt="" width="45" height="45" />
             </a>
             <!-- <div class="dropdown-menu dropdown-user">
               <a href="#" class="dropdown-item">

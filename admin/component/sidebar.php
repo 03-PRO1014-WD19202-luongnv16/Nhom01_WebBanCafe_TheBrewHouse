@@ -6,7 +6,7 @@
               <div class="simplebar-content" style="padding: 0px">
                 <div class="sidebar-header">
                   <div class="logo-icon">
-                    <img src="./images/logo.png" alt="" />
+                    <img src="./images/loggo.png" alt="" />
                   </div>
                 </div>
                 <div class="sidebar-nav">
@@ -71,7 +71,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="#" class="has-arrow">
+                      <a onclick="return confirm('Bạn có chắc muốn thoát?')" href="../index.php?act=thoat" class="has-arrow">
                         <div class="child-icon">
                           <i class="bi bi-box-arrow-right"></i>
                         </div>

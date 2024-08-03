@@ -49,7 +49,8 @@
             }
 
         ?> 
-         </h2>    
+         </h2>
+            <a href="?act=dangnhap">Đăng nhập</a>    
          </div>
          
       <div class="anh_dangki">

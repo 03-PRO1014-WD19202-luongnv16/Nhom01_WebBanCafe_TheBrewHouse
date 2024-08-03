@@ -73,7 +73,7 @@ function tongdonhang(){
 }
 function insert_bill($user_id,$user, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang) {
   // Tạo câu lệnh SQL
-  $sql = " INSERT INTO bill(user_id,full_name, email, phone_number, address, ngaydathang, bill_payment_status, total_price) VALUES('$user_id','$user', '$email', '$address', '$tel', '$pttt', '$ngaydathang', '$tongdonhang' ) ";
+  $sql = " INSERT INTO bill(user_id,full_name, email, phone_number, address, ngaydathang, bill_payment_status, total_price) VALUES('$user_id','$user', '$email','$tel' ,'$address' , '$ngaydathang', '$pttt', '$tongdonhang' ) ";
   // Thực thi câu lệnh SQL trả id mới khi vừa mới insert
   return pdo_execute_return_lastInsertID($sql);
 }
@@ -84,15 +84,20 @@ function insert_cart($user_id, $product_id, $img, $name, $price, $soluong, $than
   // Thực thi câu lệnh SQL
   return pdo_execute($sql);
 }
-function loadOne_bill($bill_id) {
-  $sql = "SELECT * FROM bill WHERE bill_id=".$bill_id;
-  $bill = pdo_query_one($sql);
-  return $bill;
+// function loadOne_bill($bill_id) {
+//   $sql = "SELECT * FROM bill WHERE bill_id=".$bill_id;
+//   $bill = pdo_query_one($sql);
+//   return $bill;
+// }
+function loadOne_bill($bill_id){
+  $sql="select*from bill where bill_id =".$bill_id;
+  $dm=pdo_query_one($sql);
+  return $dm;
 }
-function loadOne_cart($bill_id){
-  $sql="SELECT * FROM cart WHERE idbill = $bill_id ";
-  $bill=pdo_query_one($sql);
-  return $bill;
+function loadOne_cart($idbill){
+  $sql="SELECT * FROM cart WHERE idbill = $idbill ";
+  $cart=pdo_query_one($sql);
+  return $cart;
 }
 function loadall_bill($user_id){
   $sql="select * from bill where 1";
@@ -101,29 +106,36 @@ function loadall_bill($user_id){
   $listbill=pdo_query($sql);
   return $listbill;
 }
-function loadall_cart() {
-  $sql = "SELECT * FROM cart WHERE 1";
-  $listcart = pdo_query($sql); 
+function loadall_cart($bill_id) {
+  $sql = "SELECT * FROM cart WHERE idbill = $bill_id ";
+  $listcart = pdo_query($sql); // Thay vì pdo_query_one
   return $listcart;
 }
 
 function get_ttdh($n){
   switch ($n){
-    case '0':
-      $tt="Đơn hàng mới";
+      case '0': return "Chờ xác nhận";
+      case '1': return "Đã xác nhận";
+      case '2': return "Đang giao hàng";
+      case '3': return "Đã hủy";
+      case '4': return "Giao hàng thành công";
+      case '5': return "Giao hàng thất bại";
+      default;
+  }
+  return "Chưa xác nhận";
+}
+
+function get_pttt($n){
+  switch ($n){
+    case '1':
+      $tt="Thanh toán trực tiếp";
       break;
-      case '1':
-        $tt="Đang xử lý";
-        break;
-        case '2':
-          $tt="Đang giao hàng";
-          break;
-          case '3':
-            $tt="Đã giao hàng";
-            break;
-            default:
-            $tt="Đơn hàng mới";
-            break;
+    case '2':
+      $tt="Thanh toán online";
+      break;
+    default:
+    $tt="Thanh toán trực tiếp";
+    break;
   }
   return $tt;
 }
