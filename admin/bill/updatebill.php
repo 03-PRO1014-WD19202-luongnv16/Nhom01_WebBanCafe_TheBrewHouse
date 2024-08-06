@@ -1,43 +1,76 @@
 <?php
-  if(array($bill)){
-    extract($bill);
-  }
-  ?>
-<!-- Start main wrapper -->
+// Hàm lấy các tùy chọn trạng thái dựa trên trạng thái hiện tại
+function getStatusOptions($current_status) {
+    $options = [
+        '0' => 'Chọn',
+        '1' => 'Chờ xác nhận',
+        '2' => 'Đã xác nhận',
+        '3' => 'Đang giao hàng',
+        '4' => 'Đã hủy',
+        '5' => 'Giao hàng thành công',
+        '6' => 'Giao hàng thất bại'
+    ];
+
+    $html = '';
+    foreach ($options as $key => $value) {
+        // Xác định xem tùy chọn có nên được chọn không
+        $selected = ($key == $current_status) ? 'selected' : '';
+
+        // Bỏ qua các tùy chọn không hợp lệ dựa trên trạng thái hiện tại
+        if (($current_status == '0' && !in_array($key, ['1', '4'])) || 
+            ($current_status == '1' && !in_array($key, ['2', '4'])) || 
+            ($current_status == '2' && !in_array($key, ['3', '4'])) || 
+            ($current_status == '3' && !in_array($key, ['5', '6'])) ||
+            ($current_status == '4')) {
+            continue;
+        }
+
+        $html .= "<option value=\"$key\" $selected>$value</option>";
+    }
+
+    return $html;
+}
+
+// Lấy thông tin đơn hàng
+if (isset($_GET['bill_id']) && $_GET['bill_id'] > 0) {
+    $bill_id = $_GET['bill_id'];
+    $listcart = loadall_cart($bill_id);
+    $bill = loadOne_bill($bill_id);
+    $ttdh = $bill['bill_status'];  // Trạng thái hiện tại
+}
+?>
+
+<!-- Bắt đầu phần chính -->
 <main class="main-wrapper">
   <div class="main-content">
-    <!-- start breadcrumb -->
     <div class="page-breadcrumb">
       <div class="breadcrumb-title" style="text-align: center">CHI TIẾT ĐƠN HÀNG</div>
     </div>
-    <!-- end breadcrumb -->
     <div class="card">
       <div class="card-body">
-      <div class="product-table">
+        <div class="product-table">
           <div class="table-title">THÔNG TIN ĐƠN HÀNG</div>
           <div class="table-content">
             <div class="content1">
-            <input type="text" name="" id=""  placeholder="Mã đặt hàng" value="TBRH_VN<?=$bill_id?>">
-            <form action="index.php?act=updatebill" method="post">
-            <select name="ttdh" id="" class="tinh_trang">
-                  <option value="0" <?php if(isset($ttdh) && $ttdh == "0") echo 'selected'; ?>>Chọn</option>
-                  <option value="1" <?php if(isset($ttdh) && $ttdh == "1") echo 'selected'; ?>>Chờ xác nhận</option>
-                  <option value="2" <?php if(isset($ttdh) && $ttdh == "2") echo 'selected'; ?>>Đã xác nhận</option>
-                  <option value="3" <?php if(isset($ttdh) && $ttdh == "3") echo 'selected'; ?>>Đang giao hàng</option>
-                  <option value="4" <?php if(isset($ttdh) && $ttdh == "4") echo 'selected'; ?>>Đã hủy</option>
-                  <option value="5" <?php if(isset($ttdh) && $ttdh == "5") echo 'selected'; ?>>Giao hàng thành công</option>
-                  <option value="6" <?php if(isset($ttdh) && $ttdh == "6") echo 'selected'; ?>>Giao hàng thất bại</option>
-            </select>
-            <input type="hidden" name="bill_id" value="<?php if(isset($bill_id) && $bill_id > 0) echo $bill_id; ?>">
-            <br>
-            <br>
-            <input type="submit" name="capnhat" value="Cập nhật" class="danger">
-             </form>
+              <input type="text" name="" id="" placeholder="Mã đặt hàng" value="TBRH_VN<?=$bill_id?>" readonly>
+              
+              <!-- Chỉ hiển thị form cập nhật nếu trạng thái không phải là 'Giao hàng thành công' hoặc 'Giao hàng thất bại' -->
+              <?php if ($ttdh != '5' && $ttdh != '6'): ?>
+                <form action="index.php?act=updatebill" method="post">
+                  <select name="ttdh" id="" class="tinh_trang">
+                    <?= getStatusOptions($ttdh); ?>
+                  </select>
+                  <input type="hidden" name="bill_id" value="<?=$bill_id?>">
+                  <br><br>
+                  <input type="submit" name="capnhat" value="Cập nhật" class="danger">
+                </form>
+              <?php endif; ?>
+              
             </div>
             <div class="content2">
-                      <input type="text" name="" id="" placeholder="Tên khách hàng" value="<?=$full_name?>">
-                      <input type="text" name="" id="" placeholder="Số điện thoại" value="<?=$phone_number?>">
-                      <input type="text" name="" id="" placeholder="Địa chỉ" value="<?=$address?>">
+              <input type="text" name="" id="" placeholder="Tên khách hàng" value="<?=$bill['full_name']?>" readonly>
+              <input type="text" name="" id="" placeholder="Số điện thoại" value="<?=$bill['phone_number']?>" readonly>
+              <input type="text" name="" id="" placeholder="Địa chỉ" value="<?=$bill['address']?>" readonly>
             </div>     
           </div>
         </div>
@@ -57,14 +90,12 @@
             <tbody>
               <?php
               $tong = 0; 
-
               if (is_array($listcart)) {
                   foreach ($listcart as $key => $cart) {
                       if (is_array($cart)) {
                           extract($cart);
                           $hinhpath = "../upload/" . $img;
                           $imgTag = is_file($hinhpath) ? "<img src='" . $hinhpath . "' height='100' width='100'>" : "no photo";
-                          
                           $thanhtien = $price * $soluong; 
                           $tong += $thanhtien; 
 
@@ -100,4 +131,4 @@
     </div>
   </div>
 </main>
-<!-- End main wrapper -->
+<!-- Kết thúc phần chính -->

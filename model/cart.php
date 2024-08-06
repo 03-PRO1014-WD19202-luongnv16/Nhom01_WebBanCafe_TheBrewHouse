@@ -44,7 +44,7 @@
               <tr>
                 <td><img src="' . $anh . '" width="100px" alt=""></td>
                 <td>' . $cart[1] . '</td>
-                <td>' . number_format($cart[3], 0, '', '.') . '.000đ</td>
+                <td>' . number_format($cart[3], 0, '', '.') . '.  000đ</td>
                 <td>
                   '.$giamSoLuong.'
                     <input type="number" name="soluong" id="" value="' . $cart[4] . '" readonly>

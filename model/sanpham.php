@@ -31,7 +31,7 @@ function insert_sanpham($name,$mota,$img,$import_price,$sale_price,$listed_price
     return $listsanpham;
   }
   function loadAll_sanpham_yeuthich(){
-    $sql = "SELECT * FROM sanpham where 1 order by stock desc limit 4"; 
+    $sql = "SELECT * FROM sanpham where 1 order by stock desc limit 8"; 
     $listsanpham = pdo_query($sql);
     return $listsanpham;
   }

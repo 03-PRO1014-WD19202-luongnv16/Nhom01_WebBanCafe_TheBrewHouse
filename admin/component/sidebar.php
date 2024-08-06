@@ -30,6 +30,14 @@
                       </a>
                     </li>
                     <li>
+                      <a href="index.php?act=dsbl" class="has-arrow">
+                        <div class="child-icon">
+                          <i class="bi bi-people"></i>
+                        </div>
+                        <div class="menu-title">Bình luận</div>
+                      </a>
+                    </li>
+                    <li>
                       <a href="index.php?act=adddm" class="has-arrow">
                         <div class="child-icon">
                           <i class="bi bi-grid-3x3-gap"></i>

@@ -43,15 +43,6 @@ if(isset($_GET['act']) && $_GET['act'] !== "") {
             $listbill=loadall_bill($_SESSION['user']['id']);
             include 'view/cart/mybill.php';
             break;
-        case 'huydonhang':
-                if (isset($_GET['bill_id']) && $_GET['bill_id'] > 0) {
-                    $bill_id = intval($_GET['bill_id']);
-                    $sql = "DELETE FROM bill WHERE bill_id = ?";
-                    pdo_execute($sql, $bill_id);
-                }
-                $listbill = loadall_bill($_SESSION['user']['id']);
-                include 'view/cart/mybill.php';
-                break;
             
         case 'bill':
             include 'view/cart/bill.php';

@@ -6,6 +6,7 @@
   include '../model/pdo.php';
   include '../model/cart.php';
   include '../model/khachhang.php';
+  include '../model/bl.php';
 
   // controller
   if(isset($_GET['act'])){
@@ -157,6 +158,10 @@
         session_unset();
         header('Location: index.php');
         break;
+      case 'dsbl':
+        $list_bl = loadall_binhluan_admin(0);
+          include './binhluan/listbl.php';
+          break;
       default:
         include './component/home.php';
         break;

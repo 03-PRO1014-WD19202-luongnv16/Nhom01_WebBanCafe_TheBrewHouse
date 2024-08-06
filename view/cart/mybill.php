@@ -12,13 +12,11 @@
                     <th>NGÀY ĐẶT HÀNG</th>
                     <th>TỔNG GIÁ TRỊ</th>
                     <th>TÌNH TRẠNG ĐƠN</th>
-                    <th>Hủy đơn hàng</th>
                 </tr>
                 <?php
                             foreach($listbill as $bill){
                               extract($bill);
                               $ttdh = get_ttdh($bill["bill_status"]);
-                              $huy_don_hang = "index.php?act=huydonhang&bill_id=".$bill_id;
                               echo '<tr>
                                       <td>VN '.$bill['bill_id'].'</td>
                                       <td>TBRH_VN '.$bill['user_id'].'</td>
@@ -28,11 +26,6 @@
                                       <td>'.$bill['ngaydathang'].'</td>
                                       <td>'.$bill['total_price'].'.000đ</td>
                                       <td>'.$ttdh.'</td>
-                                      <td>
-                                        <a href="'.$huy_don_hang.'" class="sua">
-                                        <i class="bi bi-pencil-square"></i>
-                                        </a>
-                                      </td>
                                     </tr>';
                           }
                           

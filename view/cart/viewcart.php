@@ -24,7 +24,6 @@
                     <div class="bill">
                       <a href="index.php?act=bill"><input type="button" value="THANH TOÁN"></a>
                       <a href="index.php?act=sanphamall"><input type="button" value="MUA THÊM"></a>
-                      <a href="index.php?act=delCart"><input type="button" value="XÓA"></a>
                     </div>
                 </div>
             </div>

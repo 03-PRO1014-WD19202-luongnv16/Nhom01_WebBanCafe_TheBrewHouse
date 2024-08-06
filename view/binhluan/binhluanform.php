@@ -38,6 +38,9 @@ $dsbl=loadall_binhluan($idpro);
                     <div class="boxcontent2 binhluan">
                         
                         <table>
+                            <th>Nội dung</th>
+                            <th>ID người dùng</th>
+                            <th>Thời gian bình luận</th>
                             <?php
                             
                             foreach ($dsbl as $bl) {
@@ -55,7 +58,7 @@ $dsbl=loadall_binhluan($idpro);
 
                         <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">
                             <input type="hidden" name="idpro" value="<?=$idpro?>">
-                            <input type="text"  name="noidung"> <br>
+                            <input type="text"  name="noidung"> 
                             <input type="submit" name="guibinhluan" value="Gửi bình luận">
                         </form>
                     </div>
@@ -78,3 +81,4 @@ if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
 
 </body>
 </html>
+
